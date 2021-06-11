@@ -1,0 +1,59 @@
+/* Header */
+
+header{
+  /*background-color: #f3e1fe;*/
+  background-color: #000000;
+}
+
+.logo{
+  color: #375b94;
+}
+
+.shopbag, .mypage_icon{
+  color:#a6b383;
+}
+
+.shopbag:hover, .mypage_icon:hover{
+  color:white;
+}
+
+
+.nav-link i{
+  color:#8a1712;
+}
+
+.nav-bg-color{
+  background-color: white;
+}
+
+.searchfield{
+  border-color: purple;
+}
+
+/* side-menu for links in hamburger menu*/
+
+.dropdown-menu li {
+    position: relative;
+  }
+  .dropdown-menu .dropdown-submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: -7px;
+  }
+  .dropdown-menu .dropdown-submenu-left {
+    right: 100%;
+    left: auto;
+  }
+  .dropdown-menu > li:hover > .dropdown-submenu {
+    display: block;
+  }
+/* Index img carousel */
+.index-main{
+  margin-top:170px;
+}
+
+.pic1, .pic2 {
+height: 80vh;
+width:80vw;
+}
