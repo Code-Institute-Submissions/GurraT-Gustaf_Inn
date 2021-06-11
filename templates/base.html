@@ -21,7 +21,6 @@
 
     {% block corejs %}
     <script src="https://kit.fontawesome.com/8845bbdc20.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     {% endblock %}
@@ -36,89 +35,19 @@
          <div class="mt-5 row">
         <form class="row" method="GET" action= "">
             <div class="col-1"></div>
-            <div class="col-2 border-bottom">
-            <input class="fs-5 text-center form-control border-0" type="text" name="q" placeholder="Search this site" aria-label="Search">
-          </div>
-          <div class="col-1 border-bottom">
-            <button type="submit" class="border-0 btn">
-              <span class="fs-5 icon">
-              <i class="fas fa-search"></i>
-            </span>
-            </button>
-          </div>
+            {% include 'includes/search-field.html' %}
+          <!--- Logo ---> 
           <div class="col-4 text-center">
             <a href="{% url 'home' %}" class="btn">
               <p class="fs-1 text-center text-black my-0">Wizard Inn</p>
             </a>
         </div>
-        <div class="dropdown col-2 mt-1 text-center border-bottom">
-          <a class="btn dropdown-toggle fs-4" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fas fa-user"></i>
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </div>
-        <div class="col-1 text-center mt-1.2 border-bottom">
-          <a href="" class="btn text-center fs-3"> <i class="fas fa-shopping-basket"></i></a>
-        </div>
+        {% include 'includes/my-account-button.html' %}
           </form>
 
-          <nav class="navbar navbar-expand-lg navbar-light border-bottom">
-            <div class="container-fluid">
-              <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav text-center navbar-nav-scroll  col-12 mx-auto" style="--bs-scroll-height: 100px;">
-                  <li class="col-2"></li>
-                  <li class="nav-item dropdown col-2 text-center">
-                    <a class="fs-5 nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fas fa-hat-wizard">All products</i>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item dropdown col-2 text-center">
-                    <a class="fs-5 nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fas fa-gem">Amulettes</i>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item dropdown col-2 text-center">
-                    <a class="fs-5 nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fas fa-icicles">Elements</i>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item dropdown col-2 text-center">
-                    <a class="fs-5 nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fas fa-book">Holy Books</i>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
+          {% include 'includes/main-nav.html' %}
+
+          
         </div>  
 
 
