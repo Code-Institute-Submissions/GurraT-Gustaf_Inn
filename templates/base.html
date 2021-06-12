@@ -32,7 +32,7 @@
     <title>Wizard Inn {% block extra_title %} {% endblock %}</title>
   </head>
   <body>
-      <header class="container-fluid fixed-top">
+      <header class="container-fluid fixed-top border-top border-bottom">
         <!-- Header view large device -->
          <div class="mt-5 row d-none d-lg-block">
         <form class="row" method="GET" action= "">
@@ -50,14 +50,14 @@
           {% include 'includes/main-nav.html' %}
         </div> 
         <!-- Header view on all device except large device-->
-        <div class="mt-5 d-block d-lg-none">
+        <div class="my-5 d-block d-lg-none">
           <div class="row">
             <div class="col-2">
             {% include 'includes/hamburger-menu.html' %}
           </div>
-          <div class="col-6 text-center">
+          <div class="col-5 text-center">
             <a href="{% url 'home' %}" class="btn">
-              <p class="fs-1 text-center logo my-0">Wizard Inn</p>
+              <p class="fs-2 text-center logo my-0">Wizard Inn</p>
             </a>
         </div>
         {% include 'includes/my-account-button.html' %}

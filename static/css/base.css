@@ -7,6 +7,7 @@ header{
 
 .logo{
   color: #375b94;
+  text-shadow: cornsilk 0.2px 0.2px;
 }
 
 .shopbag, .mypage_icon{
@@ -18,8 +19,12 @@ header{
 }
 
 
-.nav-link i{
+.nav-link i {
   color:#8a1712;
+}
+
+#hamburgermenu {
+color:#a21d88;
 }
 
 .nav-bg-color{
@@ -50,7 +55,7 @@ header{
   }
 /* Index img carousel */
 .index-main{
-  margin-top:170px;
+  margin-top:160px;
 }
 
 .pic1, .pic2 {
