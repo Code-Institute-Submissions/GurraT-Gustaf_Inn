@@ -1,38 +1,57 @@
 /* Header */
 
 header{
-  /*background-color: #f3e1fe;*/
-  background-color: #000000;
+  /*background-color: #f3e1fe;
+  background-image: url("/media/pexels-vijay-vinoth-1546070 (1).jpg");
+  background-color: white;
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center center;*/
+  background-color: white;
+  /*border-bottom: black 1px solid;*/
+  border-top: black 1px solid;
+}
+
+.input-group{
+  height: 10px;
 }
 
 .logo{
   color: #375b94;
-  text-shadow: cornsilk 0.2px 0.2px;
+  text-shadow: #04132c 0.2px 0.2px;
+  font-family: "Dancing Script";
+  font-size: 48px;
 }
 
 .shopbag, .mypage_icon{
-  color:#a6b383;
+  color: black;
+  /*color:#ff981f;
+  text-shadow: #8a1712 0.2px 0.2px;*/
 }
 
 .shopbag:hover, .mypage_icon:hover{
-  color:white;
+  /*color:#ff711f;
+  text-shadow: cornsilk 0.2px 0.2px;*/
 }
 
 
-.nav-link i {
-  color:#8a1712;
-}
-
-#hamburgermenu {
-color:#a21d88;
+.nav-link i, #hamburgermenu {
+  color: black;
+  font-size: 14px;
+  /*color:#8a1712;
+  text-shadow: #ff711f 0.01px 0.01px;*/
 }
 
 .nav-bg-color{
   background-color: white;
 }
 
-.searchfield{
-  border-color: purple;
+.search-field-wrap{
+ margin-top: 5vh;
+}
+
+.account-button-wrap{
+  margin-top: 4vh;
 }
 
 /* side-menu for links in hamburger menu*/
@@ -55,10 +74,28 @@ color:#a21d88;
   }
 /* Index img carousel */
 .index-main{
-  margin-top:160px;
+  margin-top:150px;
+  border:white 40px solid;
 }
 
 .pic1, .pic2 {
 height: 80vh;
 width:80vw;
+}
+
+/* fixed top navbar only on medium and up */
+@media (max-width: 992px) {
+
+  .account-button-wrap{
+    margin-top: 0vh;
+  }
+
+  .logo{
+    font-size: 22px;
+  }
+
+  .index-main{
+    margin-top:110px;
+  }
+
 }
