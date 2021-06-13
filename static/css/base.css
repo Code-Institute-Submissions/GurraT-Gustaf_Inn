@@ -1,15 +1,18 @@
 /* Header */
 
 header{
-  /*background-color: #f3e1fe;
-  background-image: url("/media/pexels-vijay-vinoth-1546070 (1).jpg");
+  /*background-color: #f3e1fe;*/
+  background-image: url("/media/pexels-sergey-katyshkin-7671614.jpg");
   background-color: white;
-  background-size: 40%;
+  background-size:cover;
   background-repeat: no-repeat;
-  background-position: center center;*/
+  background-position: center center;
   background-color: white;
   /*border-bottom: black 1px solid;*/
-  border-top: black 1px solid;
+  border-top: white 10px solid;
+  border-right: white 40px solid;
+  border-left: white 40px solid;
+  border-bottom: white 1px solid;
 }
 
 .input-group{
@@ -17,27 +20,29 @@ header{
 }
 
 .logo{
-  color: #375b94;
-  text-shadow: #04132c 0.2px 0.2px;
-  font-family: "Dancing Script";
+  color:white;
+  text-shadow: #04132c 1px 1px;
+  font-family: "Oleo Script";
   font-size: 48px;
+
 }
 
 .shopbag, .mypage_icon{
-  color: black;
+  color: #cebfc4;
   /*color:#ff981f;
   text-shadow: #8a1712 0.2px 0.2px;*/
 }
 
 .shopbag:hover, .mypage_icon:hover{
-  /*color:#ff711f;
-  text-shadow: cornsilk 0.2px 0.2px;*/
+  color:rgb(212, 245, 214);
+  /*text-shadow: cornsilk 0.2px 0.2px;*/
 }
 
 
-.nav-link i, #hamburgermenu {
-  color: black;
-  font-size: 14px;
+.nav-link, #hamburgermenu {
+  color: #cebfc4 !important;
+    font-size: 18px;
+  font-family: "Oleo Script";
   /*color:#8a1712;
   text-shadow: #ff711f 0.01px 0.01px;*/
 }
@@ -74,13 +79,13 @@ header{
   }
 /* Index img carousel */
 .index-main{
-  margin-top:150px;
+  margin-top:140px;
   border:white 40px solid;
 }
 
-.pic1, .pic2 {
-height: 80vh;
-width:80vw;
+.carousel-inner{
+  margin-top: -40vh;
+  height: 140vh;
 }
 
 /* fixed top navbar only on medium and up */
@@ -91,11 +96,16 @@ width:80vw;
   }
 
   .logo{
-    font-size: 22px;
+    font-size: 15px;
   }
 
   .index-main{
-    margin-top:110px;
+    margin-top:90px;
+  }
+
+  .carousel-inner{
+    margin-top: -10vh;
+    height: 80vh;
   }
 
 }
