@@ -27,7 +27,7 @@ header{
 
 }
 
-.shopbag, .mypage_icon{
+.mypage_icon{
   color: #cebfc4;
   /*color:#ff981f;
   text-shadow: #8a1712 0.2px 0.2px;*/
@@ -36,6 +36,14 @@ header{
 .shopbag:hover, .mypage_icon:hover{
   color:rgb(212, 245, 214);
   /*text-shadow: cornsilk 0.2px 0.2px;*/
+}
+
+.purchase_text{
+color:#50de59;
+}
+
+.empty_text{
+  color:#e63b3b;
 }
 
 
@@ -127,8 +135,18 @@ border: solid 1px black;
   }
 
   .logo{
-    font-size: 15px;
+    font-size: 20px;
+  }
+  .shopbag{
+    font-size: 12px;
+    }
+  .shopbag i{
+    text-shadow: black 0.4px 0.4px
+
   }
 
+  .mypage_icon, #hamburgermenu {
+      color:white !important;
+  text-shadow: #04132c 1px 1px !important;
 
 }
