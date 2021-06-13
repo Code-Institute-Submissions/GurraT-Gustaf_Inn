@@ -78,15 +78,46 @@ header{
     display: block;
   }
 /* Index img carousel */
-.index-main{
-  margin-top:140px;
+#indexcarousel{
+  position: relative;
   border:white 40px solid;
+  height:100vh;
+}
+.carousel-inner{
+  height: 100%;
+}
+.pic{
+  height: 100vh;
+  width:100vw;
 }
 
-.carousel-inner{
-  margin-top: -40vh;
-  height: 140vh;
+.shop-now{
+  margin-top: 30vh;
+  margin-left: 9vw;
+  position: absolute;
+  z-index: 9;
 }
+
+.shop-now p{
+  padding:6px;
+  font-size: 16px;
+  font-family: "Oleo Script";
+  color:black;
+  background-color: #e9fefd;
+  border: solid 2px black;
+  opacity: 0.5;
+}
+
+
+.shop-now-button{
+margin-left: 5vw;
+font-family: "Arial";
+font-size: 14px;
+font-weight: bold;
+background-color: #e9fefd;
+border: solid 1px black;
+}
+
 
 /* fixed top navbar only on medium and up */
 @media (max-width: 992px) {
@@ -99,13 +130,5 @@ header{
     font-size: 15px;
   }
 
-  .index-main{
-    margin-top:90px;
-  }
-
-  .carousel-inner{
-    margin-top: -10vh;
-    height: 80vh;
-  }
 
 }
