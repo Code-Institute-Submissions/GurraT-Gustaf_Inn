@@ -1,0 +1,197 @@
+[
+    {
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+          "sku": "a0000001",
+          "name": "Talisman",
+          "description": "Contains traits that give the wearer enhanced protection, love and fortune. But be carefull overconsumption can have the opposite effect.",
+          "price": 43.15,
+          "category": 1,
+          "rating": 3.1,
+          "image": "dreamcatcher(1).jpg"
+        }
+      },
+      {
+        "pk": 2,
+        "model": "products.product",
+        "fields": {
+          "sku": "a0000002",
+          "name": "Eternal light",
+          "description": "Brings hope in despair and act as a compass in hopeless situations. Direct exposure to the eye can lead to blindness",
+          "price": 35.22,
+          "category": 1,
+          "rating": 2.6,
+          "image": "18966325.jpg"
+        }
+      },
+      {
+        "pk": 3,
+        "model": "products.product",
+        "fields": {
+          "sku": "a0000003",
+          "name": "Judas Penny",
+          "description": "Enhances your fortune, power and postítion in exchange for solitude and contempt",
+          "price": 15.22,
+          "category": 1,
+          "rating": 1.6,
+          "image": "pexels-ishita-gupta-4607597.jpg"
+        }
+      },
+      {
+        "pk": 4,
+        "model": "products.product",
+        "fields": {
+          "sku": "e0000001",
+          "name": "Yin",
+          "description": "Bring you closer to earth, moon and dark material.Inhale the sensation at get closer to your feminine side.",
+          "price": 65.45,
+          "category": 2,
+          "rating": 4.2,
+          "image": "pexels-pixabay-39561.jpg"
+        }
+      },
+      {
+        "pk": 5,
+        "model": "products.product",
+        "fields": {
+          "sku": "e0000002",
+          "name": "Yang",
+          "description": "Bring you closer to sun, heaven and light material.Inhale the sensation at get closer to your masculine side.",
+          "price": 61.35,
+          "category": 2,
+          "rating": 4.0,
+          "image": "pexels-pixabay-39649.jpg"
+        }
+      },
+      {
+        "pk": 6,
+        "model": "products.product",
+        "fields": {
+          "sku": "e0000003",
+          "name": "Holy Fire",
+          "description": "Cleanses your soul, expels evil spirits and acts as a beacon in dark times.",
+          "price": 21.35,
+          "category": 2,
+          "rating": 3.4,
+          "image": "pexels-energepiccom-426444.jpg"
+        }
+      },
+      {
+        "pk": 7,
+        "model": "products.product",
+        "fields": {
+          "sku": "o0000001",
+          "name": "Holy Gral",
+          "description": "Enhances your spirit, increases your vitality and leads to prolonged life.",
+          "price": 71.98,
+          "category": 3,
+          "rating": 4.7,
+          "image": "grail-holy-k1zJd4A-600.jpg"
+        }
+      },
+      {
+        "pk": 8,
+        "model": "products.product",
+        "fields": {
+          "sku": "o0000002",
+          "name": "Spirit in the lamp",
+          "description": "Provides you with three wishes of your own choice. Choose carefully once you make your choice it is unrevocable",
+          "price": 61.48,
+          "category": 3,
+          "rating": 3.7,
+          "image": "image1.jpgAF1F585A-7D72-4F0D-9BED-53E3D16C1DF0Default.jpg"
+        }
+      },
+      {
+        "pk": 9,
+        "model": "products.product",
+        "fields": {
+          "sku": "o0000003",
+          "name": "Horse shoe",
+          "description": "Increases your luck and fortune. But be aware if turned upside down it will lead to misfortune.",
+          "price": 21.48,
+          "category": 3,
+          "rating": 2.7,
+          "image": "0062078_horseshoe-pewter-trophy.jpg"
+        }
+      },
+      {
+        "pk": 10,
+        "model": "products.product",
+        "fields": {
+          "sku": "o0000004",
+          "name": "Hermes shoe",
+          "description": "Lightens your soul and makes you weightless. Perfect item for people that are tired of taking the plane.",
+          "price": 53.78,
+          "category": 4,
+          "rating": 3.7,
+          "image": "417azzG3bHL.jpg"
+        }
+      },
+      {
+        "pk": 11,
+        "model": "products.product",
+        "fields": {
+          "sku": "o0000005",
+          "name": "Lucky clover",
+          "description": "Increases your luck and give you comfort in your everyday life.",
+          "price": 13.78,
+          "category": 4,
+          "rating": 2.9,
+          "image": "pexels-djalma-paiva-armelin-705310.jpg"
+        }
+      },
+      {
+        "pk": 12,
+        "model": "products.product",
+        "fields": {
+          "sku": "o0000006",
+          "name": "Codex Gigas",
+          "description": "A book with spells for most situations. But be aware some spells can distort your mind and bring fear into your everyday life.",
+          "price": 103.18,
+          "category": 4,
+          "rating": 3.5,
+          "image": "page-hipnerotomachia-poliphili_14.jpg"
+        }
+      },
+      {
+        "pk": 13,
+        "model": "products.product",
+        "fields": {
+          "sku": "o0000007",
+          "name": "Teleport",
+          "description": "Travel through space to any location of your choice within millisecond",
+          "price": 178.92,
+          "category": 5,
+          "rating": 4.8,
+          "image": "istockphoto-829589792-612x612.jpg"
+        }
+      },
+      {
+        "pk": 14,
+        "model": "products.product",
+        "fields": {
+          "sku": "o0000008",
+          "name": "Moses Ark",
+          "description": "Weather-resistant boat with plenty of space.Made to withstand long journeys in stormy weather.",
+          "price": 202.02,
+          "category": 5,
+          "rating": 3.8,
+          "image": "ark.jpg"
+        }
+      },
+      {
+        "pk": 15,
+        "model": "products.product",
+        "fields": {
+          "sku": "o0000009",
+          "name": "Excalibur",
+          "description": "Provides status, respect and fear. Your enemy will bow under your power and you will gain absolute right to decide over your destiny.",
+          "price": 132.02,
+          "category": 5,
+          "rating": 3.2,
+          "image": "ge3rwkMGTTjfZBhPF0VdNeLHjo3.jpg"
+        }
+      }
+]
