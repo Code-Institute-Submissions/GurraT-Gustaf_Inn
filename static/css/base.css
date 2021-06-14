@@ -1,7 +1,4 @@
 /* Header */
-.move{
-  margin-top: 70vh;
-}
 
 header{
   /*background-color: #f3e1fe;*/
@@ -114,8 +111,8 @@ color:#50de59;
   font-size: 16px;
   font-family: "Oleo Script";
   color:black;
-  background-color: #e9fefd;
-  border: solid 2px black;
+  background-color: whitesmoke;
+  border: gray 2px solid;
   opacity: 0.5;
 }
 
@@ -129,6 +126,78 @@ background-color: #e9fefd;
 border: solid 1px black;
 }
 
+/* product section */
+
+.section-margin{
+  margin-top: 30vh;
+  margin-bottom: 30vh;
+  border-right: white 42px solid;
+  border-left: white 42px solid;
+  border-bottom: white 10px solid;
+}
+
+.section-title{
+  color:#252529;
+  text-shadow: #04132c 1px 1px;
+  font-family: "Oleo Script";
+  font-size: 48px;
+  border-bottom: gray 0.1vh solid;
+}
+
+.card{
+  background-color: whitesmoke;
+  margin-top:4vh;
+  border: gray 2px solid;
+}
+
+.card-title{
+  height:5vh;
+  padding-top: 1vh;
+}
+
+.card-img-top{
+  height:40vh;
+  padding-left: 3vh;
+  padding-right: 3vh;
+}
+
+.no_image{
+  height:40vh;
+  background-color: lightgrey;
+  border: white solid 4vh;
+  background-image: url("/media/noimg.png");
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding-left: 3vh;
+  padding-right: 3vh; 
+}
+
+.no_image p {
+  padding-top: 40%;
+  color: red;
+  font-weight: bold;
+
+}
+
+.product_description{
+  height: 20vh;
+  font-size:12px;
+  border-bottom: gray 2px solid;
+}
+
+/* product_detail page */
+
+.section-detail-margin{
+  margin-top: 40vh;
+  border-right: white 42px solid;
+  border-left: white 42px solid;
+  border-bottom: white 10px solid;
+}
+
+.product_image {
+  height: 60vh;
+}
 
 /* fixed top navbar only on medium and up */
 @media (max-width: 992px) {
@@ -151,5 +220,27 @@ border: solid 1px black;
   .mypage_icon, #hamburgermenu {
       color:white !important;
   text-shadow: #04132c 1px 1px !important;
+}
+
+.section-margin{
+  margin-top: 28vh;
+}
+
+.section-title{
+  font-size: 32px;
+}
+
+.product_detail h3{
+  font-size: 18px;
+}
+
+.product_detail h6, p{
+  font-size: 12px;
+}
+
+.product_detail h5{
+  font-size: 14px;
+  font-weight: bold;
+}
 
 }

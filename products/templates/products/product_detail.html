@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="container section-detail-margin">
+    <div class="row">
+        <div class="col-6 text-center product_image ">
+        {% if product.image %}
+            <a href="{% url 'product_detail' product.id %}" >
+              <img src="{{product.image.url}}" class="card-img-top" alt="{{product.name}}">
+            </a>
+          {% else %}
+          <a href="" >
+            <img src="/media/onimg2.png" class="card-img-top" alt="{{product.name}}">
+          </a>
+          {% endif %}
+        </div>
+        <div class="mt-3 col-6 product_detail">
+            <h3 class="">{{product.name}}</h3>
+            <h6> Article number : {{product.sku}}</h6>
+            <h5>{{product.price}} &pi;</h5>
+            <h6>&#9734; {{product.rating}}/5</h6>
+            <p> {{product.description}} </p>
+         </div>
+    </div>
+          </div>
+  
+{% endblock %}

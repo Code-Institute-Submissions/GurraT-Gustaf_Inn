@@ -3,12 +3,41 @@
 
 {% block content %}
 
-<div class="container move">
+
+
+
+<div class="container section-margin">
     <div class="row">
-        <div class="col">
-            {{ products }}
+        <div class="col-12 text-center section-title">
+           <p> Products </p>
         </div>
     </div>
-</div>
+    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+        {% for product in products %}
+        <div class="col">
+          <div class="card h-100 text-center">
+            <div><h5 class="card-title">{{product.name}}</h5></div>
+                {% if product.image %}
+                  <a href="{% url 'product_detail' product.id %}" >
+                    <img src="{{product.image.url}}" class="card-img-top" alt="{{product.name}}">
+                  </a>
+                {% else %}
+                      <span class="no_image">
+                        <a href="{% url 'product_detail' product.id %}" >
+                          <p>
+                          Unable to find image
+                          </p>
+                        </a>
+                      </span>  
+                {% endif %}
+            <div class="card-body">
+              <p class="card-text product_description">{{product.description}}</p>
+              <p class="card-text">Price: <strong>{{product.price}} &pi;</strong></p>
+              <p class="card-text"> &#9734; Rating: {{product.rating}} of 5 &#9734;</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+          </div>
   
 {% endblock %}
