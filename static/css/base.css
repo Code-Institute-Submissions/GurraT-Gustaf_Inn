@@ -100,7 +100,7 @@ color:#50de59;
 }
 
 .shop-now{
-  margin-top: 30vh;
+  margin-top: 36vh;
   margin-left: 9vw;
   position: absolute;
   z-index: 9;
@@ -110,22 +110,26 @@ color:#50de59;
   padding:6px;
   font-size: 16px;
   font-family: "Oleo Script";
-  color:black;
-  background-color: whitesmoke;
-  border: gray 2px solid;
-  opacity: 0.5;
+  color:#494a3d;
+  background-color: white;
+  /*border: gray 2px solid;*/
+  opacity: 0.6;
 }
 
 
 .shop-now-button{
-margin-left: 5vw;
+align-items: center;
 font-family: "Arial";
 font-size: 14px;
 font-weight: bold;
-background-color: #e9fefd;
-border: solid 1px black;
+color: #d4d5d7;
+background-color: #9a9b9d;
+border: solid 1px #494a3d;
 }
 
+.shop-now-button:hover{
+  background-color: #d4d5d7;
+}
 /* product section */
 
 .section-margin{
@@ -209,6 +213,10 @@ border: solid 1px black;
   .logo{
     font-size: 20px;
   }
+  
+.shop-now{
+  margin-left: 14vw;
+}
   .shopbag{
     font-size: 12px;
     }

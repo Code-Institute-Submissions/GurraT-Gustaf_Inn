@@ -17,16 +17,14 @@ def all_products(request):
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
-
-    if request.GET:
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
                 messages.error(request, "Did you forget to add search criteria?")
                 return redirect(reverse('products'))
-        queries = Q(name__icontains=query) | Q(description__icontains=query)
-        products = products.filter(queries)
-        
+             
+            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            products = products.filter(queries)
 
     context = {
         'products': products,
@@ -43,7 +41,7 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
 
     context = {
-        'product': product
+        'product': product,
     }
 
     return render(request, 'products/product_detail.html', context)

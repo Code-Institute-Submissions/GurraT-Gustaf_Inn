@@ -38,7 +38,7 @@
           <a class="dropdown-item" href="#">By Category</a>
         </li>
         <li>
-          <a class="dropdown-item" href="#">All Amulettes</a>
+          <a class="dropdown-item" href="{% url 'products' %}?category=amulettes">All Amulettes</a>
         </li>
       </ul>
     </li>
@@ -57,7 +57,7 @@
           <a class="dropdown-item" href="#">By Category</a>
         </li>
         <li>
-          <a class="dropdown-item" href="#">All Elements</a>
+          <a class="dropdown-item" href="{% url 'products' %}?category=elements">All Elements</a>
         </li>
       </ul>
     </li>
@@ -67,16 +67,16 @@
       </a>
       <ul class="dropdown-menu dropdown-submenu">
         <li>
-          <a class="dropdown-item" href="#">New Arrival</a>
+          <a class="dropdown-item" href="{% url 'products' %}?category=new_arrivals">New Arrival</a>
         </li>
         <li>
-          <a class="dropdown-item" href="#">Deal</a>
+          <a class="dropdown-item" href="{% url 'products' %}?category=deals">Deal</a>
         </li>
         <li>
-          <a class="dropdown-item" href="#">Clearance</a>
+          <a class="dropdown-item" href="{% url 'products' %}?category=clearance">Clearance</a>
         </li>
         <li>
-          <a class="dropdown-item" href="#">All Special</a>
+          <a class="dropdown-item" href="{% url 'products' %}?category=clearance,deals,new_arrivals">All Special</a>
         </li>
       </ul>
     </li>
