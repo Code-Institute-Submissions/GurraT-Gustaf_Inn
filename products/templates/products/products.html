@@ -3,14 +3,28 @@
 
 {% block content %}
 
-
-
-
 <div class="container section-margin">
     <div class="row">
         <div class="col-12 text-center section-title">
            <p> Products </p>
+        </div>  
+        <div class="row mt-3">
+          <div class="col-4"></div>
+          <div class="col-4">
+          <select class="form-select" id="sort-option" aria-label="sort-function">
+            <option value="reset">Sort Product ...</option>
+            <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Increasing Price</option>
+            <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Decreasing Price</option>
+            <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Increasing Rating</option>
+            <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Decreasing Rating</option>
+            <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+            <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A) </option>
+            <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
+            <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+          </select>
         </div>
+        <div class="col-4"></div>
+      </div>  
     </div>
     <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
         {% for product in products %}
@@ -41,4 +55,32 @@
         {% endfor %}
           </div>
   
+{% endblock %}
+
+{% block postloadjs %}
+    {{block.super}}
+    <script type="text/javascript">
+      $('#sort-option').change(function() {
+        var selector= $(this);
+        var currentURL = new URL(window.location);
+
+        var selectedVal = selector.val();
+        if(selectedVal != 'reset'){
+          var sort = selectedVal.split('_')[0];
+          var direction = selectedVal.split('_')[1];
+
+          currentURL.searchParams.set("sort",sort);
+          currentURL.searchParams.set("direction",direction);
+
+          window.location.replace(currentURL);
+        } else {
+          
+          currentURL.searchParams.delete("sort");
+          currentURL.searchParams.delete("direction");
+
+          window.location.replace(currentURL);
+        }
+      })
+    </script>
+
 {% endblock %}
