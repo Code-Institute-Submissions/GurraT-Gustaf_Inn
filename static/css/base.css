@@ -122,13 +122,15 @@ align-items: center;
 font-family: "Arial";
 font-size: 14px;
 font-weight: bold;
-color: #d4d5d7;
-background-color: #9a9b9d;
-border: solid 1px #494a3d;
+color: #1f2b1e;
+background-color: #95e643;
+border: solid 1px #232b22;
 }
 
 .shop-now-button:hover{
-  background-color: #d4d5d7;
+  background-color: #84c541;
+  color: white;
+  border: solid 1px #697966;
 }
 /* product section */
 
@@ -200,7 +202,18 @@ border: solid 1px #494a3d;
 }
 
 .product_image {
+  margin-top: 4vh;
   height: 60vh;
+}
+
+.add_to_bag_button{
+  align-items: center;
+font-family: "Arial";
+font-size: 14px;
+font-weight: bold;
+color: #f1e9e9;
+background-color:  #555361;
+border: solid 1px #100e19;
 }
 
 /* fixed top navbar only on medium and up */
@@ -238,6 +251,14 @@ border: solid 1px #494a3d;
   font-size: 32px;
 }
 
+.section-detail-margin{
+margin-top: 30vh;
+}
+
+.product_detail{
+  align-items: center;
+  text-align: center;
+}
 .product_detail h3{
   font-size: 18px;
 }
