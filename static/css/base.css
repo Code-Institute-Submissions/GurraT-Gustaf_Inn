@@ -244,7 +244,7 @@ border: solid 1px #100e19;
 }
 
 .section-margin{
-  margin-top: 28vh;
+  margin-top: 32vh;
 }
 
 .section-title{
@@ -263,13 +263,17 @@ margin-top: 30vh;
   font-size: 18px;
 }
 
-.product_detail h6, p{
+.product_detail h6, .product_detail p{
   font-size: 12px;
 }
 
 .product_detail h5{
   font-size: 14px;
   font-weight: bold;
+}
+
+.shopping_bag_title{
+  font-size: 12px;
 }
 
 }
