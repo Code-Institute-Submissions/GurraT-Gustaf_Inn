@@ -35,7 +35,9 @@
               </div>
             <p> {{product.description}} </p>
             <h6> Quantity: </h6>
-            <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+            <div class="row">
+              <div class="col">
+            <form class="form product_detail_form" action="{% url 'add_to_bag' product.id %}" method="POST">
               {% csrf_token %}
               <div class="form-row">
                     <div class="col-12 input-group">
@@ -60,6 +62,8 @@
                   <input type="hidden" name="redirect_url" value="{{ request.path }}">
               </div>
           </form>
+        </div>
+      </div>
           </div>
     </div>
           </div>

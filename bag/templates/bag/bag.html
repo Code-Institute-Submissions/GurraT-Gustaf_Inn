@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load bag_tools %}
 
 {% block content %}
 
@@ -28,7 +29,13 @@
     {% for item in bag_items %}
     <div class="row text-center mt-3">
         <div class="col-lg-3 d-none d-lg-block col-4">
-            <img src="{{ item.product.image.url }}" class="shopping_img card-img-top" alt="Product image">  
+                    {% if item.product.image %}
+              <img src="{{item.product.image.url}}" class="card-img-top" alt="{{product.name}}">
+          {% else %}
+          <a href="" >
+            <img src="/media/onimg2.png" class="card-img-top" alt="{{product.name}}">
+          </a>
+          {% endif %} 
         </div>
         <div class="col-lg-3 mt-3 col-4">
             <p><strong>{{item.product.name}}</strong></p>  
@@ -37,26 +44,32 @@
         <div class="col-lg-2 margin-shopbag col-2">
             <p>{{item.product.price}} &pi;</p> 
         </div>
-        <div class="col-lg-2 margin-shopbag col-4">
-            <form class="" action="" method="POST">
+        <div class="col-lg-2 margin-shopbag mx-auto col-4">
+        <form class="form-quantity update_form" action="{% url 'adjust_bag' item.item_id %}" method="POST">
                 {% csrf_token %}
                 <div class="col-12 input-group">
-                    <button class="decrement_qty" data-item_id="{{ item_item_id }}" id="decrement_qty_{{item_item_id}}">
+                    <button class="decrement_qty" data-item_id="{{ item.item_id }}" id="decrement_qty_{{item.item_id}}">
                       <span>
                         <i class="fas fa-minus"></i>
                       </span>
                     </button>
-                    <input class="qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item_item_id }}" id="id_qty_{{item_item_id}}">
-                    <button class="increment_qty" data-item_id="{{ item_item_id }}" id="increment_qty_{{item_item_id}}">
+                    <input class="qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{item.item_id}}">
+                    <button class="increment_qty" data-item_id="{{ item.item_id }}" id="increment_qty_{{item.item_id}}">
                       <span>
                         <i class="fas fa-plus"></i>
                       </span>
                     </button>
                   </div>
             </form> 
+            <div class="row">
+                <div class="col add-remove-button">
+            <a class="btn update-link">Update</a>
+            <a class="btn remove-item" id="remove_{{item.item_id}}">Remove</a>
+        </div>
+        </div>
         </div>
         <div class="col-lg-2 margin-shopbag col-2">
-            <p><strong>{{item.product.price}}  &pi;</strong></p>  
+            <p><strong>{{item.product.price | calc_subtotal:item.quantity}}  &pi;</strong></p>  
         </div>
     </div>
     {% endfor %}
@@ -84,5 +97,26 @@
 {% block postloadjs %}
 {{ block.user }}
 {% include 'products/includes/quantity_input_script.html' %}
+
+<script type="text/javascript">
+    // Update quantity on click
+    $('.update-link').click(function(e) {
+        var form = $(this).prev('.update_form');
+        form.submit();
+    })
+
+    // Remove item and reload on click
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/bag/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+    </script>
 {% endblock %}
 

@@ -228,7 +228,10 @@ border: solid 1px #100e19;
 
 .margin-shopbag{
   margin-top:6vh;
+  align-items: center;
+  align-content: center;
 }
+
 
 .shopping_bag_title{
 border-bottom: solid 1px #100e19;;
@@ -239,8 +242,30 @@ border-bottom: solid 1px #100e19;;
   border-top: solid 1px #100e19;; 
 }
 
+.add-remove-button{
+  margin-top: 18px;
+}
+
+.form-quantity{
+  margin:auto !important;
+  display: table !important;
+}
+
+.update-link{
+  color:blue;
+}
+
+.remove-item{
+  color:red;
+}
+
 /* fixed top navbar only on medium and up */
 @media (max-width: 992px) {
+
+  .product_detail_form{
+    margin:auto !important;
+    display: table !important;
+  }
 
   .account-button-wrap{
     margin-top: 0vh;
@@ -304,6 +329,10 @@ margin-top: 30vh;
 }
 
 .margin-shopbag{
+  font-size: 10px;
+}
+
+.update-link, .remove-item {
   font-size: 10px;
 }
 
