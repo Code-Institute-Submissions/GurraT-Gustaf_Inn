@@ -39,7 +39,7 @@ header{
 }
 
 .purchase_text{
-color:#50de59;
+color:#95e643;
 }
 
 .empty_text{
@@ -216,6 +216,25 @@ background-color:  #555361;
 border: solid 1px #100e19;
 }
 
+/* shoppingbag */
+
+.shopping_img{
+  height:20vh;
+}
+
+.margin-shopbag{
+  margin-top:6vh;
+}
+
+.shopping_bag_title{
+border-bottom: solid 1px #100e19;;
+}
+
+.shopbag-total{
+  border-bottom: solid 1px #100e19;;
+  border-top: solid 1px #100e19;; 
+}
+
 /* fixed top navbar only on medium and up */
 @media (max-width: 992px) {
 
@@ -226,6 +245,10 @@ border: solid 1px #100e19;
   .logo{
     font-size: 20px;
   }
+
+  .purchase_text span, .empty_text span{
+    font-size: 12px;
+    }
   
 .shop-now{
   margin-left: 14vw;
