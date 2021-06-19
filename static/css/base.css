@@ -243,7 +243,7 @@ border-bottom: solid 1px #100e19;;
 }
 
 .add-remove-button{
-  margin-top: 18px;
+  margin-top: 26px;
 }
 
 .form-quantity{
@@ -253,10 +253,12 @@ border-bottom: solid 1px #100e19;;
 
 .update-link{
   color:blue;
+  font-size: 14px;
 }
 
 .remove-item{
   color:red;
+  font-size: 14px;
 }
 
 /* fixed top navbar only on medium and up */
@@ -333,7 +335,7 @@ margin-top: 30vh;
 }
 
 .update-link, .remove-item {
-  font-size: 10px;
+  font-size: 8px;
 }
 
 }

@@ -61,11 +61,11 @@
                     </button>
                   </div>
             </form> 
-            <div class="row">
-                <div class="col add-remove-button">
-            <a class="btn update-link">Update</a>
-            <a class="btn remove-item" id="remove_{{item.item_id}}">Remove</a>
-        </div>
+            <div class="add-remove-button">
+                <table>
+            <tr> <a class="btn update-link">Update </a></tr>
+            <tr> <a class="btn remove-item" id="remove_{{item.item_id}}">Remove </a></tr>
+                </table>
         </div>
         </div>
         <div class="col-lg-2 margin-shopbag col-2">
@@ -99,9 +99,13 @@
 {% include 'products/includes/quantity_input_script.html' %}
 
 <script type="text/javascript">
+
+    
     // Update quantity on click
     $('.update-link').click(function(e) {
-        var form = $(this).prev('.update_form');
+        e.preventDefault();
+        // var form = $(this).prev('.update_form');
+        var form = $(this).parent().prev();
         form.submit();
     })
 
@@ -109,13 +113,32 @@
     $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
+
+        // previous url was incorrect
         var url = `/bag/remove/${itemId}/`;
         var data = {'csrfmiddlewaretoken': csrfToken};
 
-        $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
+        // we will use fetch instead
+        fetch(url, {
+            method: "POST",
+            headers: new Headers({
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'X-CSRFToken': csrfToken,
+                    'X-Requested-With': 'XMLHttpRequest',
+                }),
+        })
+        .then(response => {
+            console.log(response);
+            window.location.reload();
+        })
+        .catch(e => console.log(e))
+
+        // $.post(url, data => {
+        //     console.log(data)
+        // })
+        //  .done(function() {
+        //      location.reload();
+        //  });
     })
     </script>
 {% endblock %}
