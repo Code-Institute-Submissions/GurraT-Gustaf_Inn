@@ -282,13 +282,19 @@ border: solid 1px #232b22;
 
 /* checkout page */
 
-.product_checkout{
+.product_checkout {
   text-align: left;
-  font-size: 12px;
+  font-size: 10px;
+}
+
+.subtotal_checkout{
+  text-align: right;
+  font-size: 10px;
 }
 
 .image_checkout img{
   height:12vh !important;
+  margin-top: 1vh;
 }
 
 /* fixed top navbar only on medium and up */
