@@ -2,11 +2,11 @@ import uuid
 
 from django.db import models
 from django.db.models import Sum
-from django.conf import Settings
+from django.conf import settings
 
 from products.models import Product
 
-class Order (models.Model):
+class Order(models.Model):
     order_number = models.CharField(max_length=50, null=False, editable=False)
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
@@ -26,7 +26,7 @@ class Order (models.Model):
         """
         generate random, unique order number using uuid
         """
-        return uuid.uuid4.hex.upper()
+        return uuid.uuid4().hex.upper()
     
     def update_total(self):
         """

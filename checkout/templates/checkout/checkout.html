@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bag_tools %}
+
+{% block content %}
+
+<div class="container section-margin">
+    <div class="col-12 text-center section-title">
+        <p> Checkout </p>
+     </div> 
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="d-none d-lg-block col-6 text-center mb-3 ">
+          <p> Please fill in the form below to complete your order</p>
+          <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+            {% csrf_token %}
+            <fieldset class="mx-3 mb-3">
+              <legend class="fieldset-label">Details</legend>
+              {{order_form.full_name | as_crispy_field }}
+              {{order_form.email | as_crispy_field}}
+            </fieldset>
+            <fieldset class="mx-3 mb-3">
+              <legend>Delivery</legend>
+              {{order_form.phone_number | as_crispy_field}}
+              {{order_form.delivery_adress| as_crispy_field }}
+              {{order_form.postcode | as_crispy_field}}
+              {{order_form.county | as_crispy_field}}
+              {{order_form.country | as_crispy_field}}
+            </fieldset>
+          </form>
+        </div>
+        <div class="d-none d-lg-block col-6 text-center mb-3 ">
+              {% for item in bag_items %}
+              <div class="col-6 image_checkout my-1">
+                <div class="row">
+                  <div class="col-6">
+                       {% if item.product.image %}
+                       <img src="{{item.product.image.url}}" class="card-img-top" alt="{{product.name}}">
+                   {% else %}
+                   <a href="">
+                     <img src="/media/onimg2.png" class="card-img-top" alt="{{product.name}}">
+                   </a>
+                   {% endif %} 
+                  </div>
+              <div class="col-3 product_checkout">
+                  <p><strong>{{item.product.name}}</strong></p>
+                  <p>art#: {{item.product.sku}}</p>
+                  <p>Qty: {{item.quantity}}</p>
+              </div>
+              {% endfor %}
+          </div>
+        </div>
+          <p><strong>Total Cost:
+         <span class="float-right">${{ total | floatformat:2 }}</span></strong>
+         </p>
+    </div>
+</div>
+  </div>
+{% endblock %}
+
+
