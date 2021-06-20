@@ -9,7 +9,7 @@
   <div class="col-12 text-center section-title">
     <p> Shopping Bag </p>
  </div> 
- <div class="col-6">
+ <div class="col-12 col-lg-6 text-center">
  <p> Please fill in the form below to complete your order</p>
  <form action="{% url 'checkout' %}" method="POST" id="payment-form">
    {% csrf_token %}
@@ -26,9 +26,19 @@
      {{order_form.county | as_crispy_field}}
      {{order_form.country | as_crispy_field}}
    </fieldset>
+   <div class="text-center my-3">
+     You choosen following items: <br>{% for item in bag_items %} {{item.quantity}} pcs of {{item.product.name}}, {% endfor %} and will be charged with {{ grand_total }} &pi; 
+   </div>
+   <div class="text-center">
+    <a href="{% url 'view_bag' %}" class="btn shop-now-button">
+      <span> Adjust Bag </span>
+    </a>
+      <input type="submit" value="Complete Order" class="btn add_to_bag_button">
+  </span>
+</div>
  </form>
 </div>
-<div class="col-6" >
+<div class="col-6 d-none d-lg-block" >
   <div class="row mt-3">
   {% for item in bag_items %}
   <div class="col-4"></div>
