@@ -71,13 +71,13 @@
 
       {% if messages %}
       <div class="message-container">
-        <!--{% for message in messages %}
-          {% with message.level as level %}
+        {% for message in messages %}
+          <!--{% with message.level as level %}
             {% if level == 25 %}-->
               {% include 'includes/toasts/toast_success.html' %}
             <!-- {% endif %}
-          {% endwith %} 
-        {% endfor %}-->
+          {% endwith %} -->
+        {% endfor %}
       </div>
       {% endif %}
 
@@ -89,12 +89,13 @@
 
       {% block postloadjs %}
       <script type="text/javascript">
+      console.log('post load js')
         var toastElList = [].slice.call(document.querySelectorAll('.toast'))
         var toastList = toastElList.map(function(toastEl) {
-        // Creates an array of toasts (it only initializes them)
-          return new bootstrap.Toast(toastEl) // No need for options; use the default options
+        // Creates an array of toasts 
+          console.log("toast")
+          return new bootstrap.Toast(toastEl).show() 
         });
-        toastList.forEach(toast => toast.show())
       </script>
       {% endblock %}
     

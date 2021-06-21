@@ -274,14 +274,27 @@ border-bottom: solid 1px #100e19;;
   z-index: 9999999;
 }
 
-.custom-toast{
+.card-img-top-toast{
+height:10vh;
+}
+
+.show-me{
   overflow: visible;
 }
 
-.toast-btn-success{
+.success-toast{
   color: #1f2b1e;
-background-color: #95e643;
-border: solid 1px #232b22;
+  background-color: #95e643;
+}
+
+.success-toast2{
+  color: #1f2b1e;
+  background-color: white;
+}
+
+.error-toast{
+  background-color: red;
+  color:white;
 }
 
 /* checkout page */

@@ -1,11 +1,11 @@
 from django import forms
 from .models import Order
 
+
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
-        fields = ('full_name', 'email', 'phone_number','country', 'postcode', 
-        'town_or_city', 'street_adress', 'delivery_adress', 'county',)
+        fields = ('full_name', 'email', 'phone_number', 'country', 'postcode', 'town_or_city', 'street_adress', 'delivery_adress', 'county',)
 
     def __init__(self, *args, **kwargs):
         """
@@ -17,7 +17,7 @@ class OrderForm(forms.ModelForm):
             'email': 'Email',
             'phone_number': 'Phone number',
             'street_adress': 'Street Adress',
-            'delivery_adress': 'Delivery Adress',        
+            'delivery_adress': 'Delivery Adress',
             'town_or_city': 'Town or City',
             'postcode': 'Postal code',
             'country': 'Country',
@@ -32,4 +32,3 @@ class OrderForm(forms.ModelForm):
             self.fields[field].widget.attrs['placerholder'] = placerholder
             self.fields[field].widget.attrs['class'] = 'style-input'
             self.fields[field].label = False
-

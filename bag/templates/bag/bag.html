@@ -71,6 +71,7 @@
         <div class="col-lg-2 margin-shopbag col-2">
             <p><strong>{{item.product.price | calc_subtotal:item.quantity}}  &pi;</strong></p>  
         </div>
+        
     </div>
     {% endfor %}
     <div class="row text-center mt-3 shopbag-total">
@@ -87,6 +88,15 @@
         <div class="col-2 margin-shopbag">
             <p><strong>{{total}} &pi;</strong></p>  
         </div>
+    </div>
+    <div class="text-center mt-3 ">
+        <a href="{% url 'products'  %}" class="btn shop-now-button">
+          <span> Keep Shopping </span>
+        </a>
+        <a href="{% url 'checkout' %}" class="btn add_to_bag_button">
+            <span> Place Order </span>
+          </a>
+      </span>
     </div>
     {% endif %}
 </div>
