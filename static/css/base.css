@@ -276,10 +276,12 @@ border-bottom: solid 1px #100e19;;
 
 .card-img-top-toast{
 height:10vh;
+background-color: white;
 }
 
-.show-me{
-  overflow: visible;
+.toast{
+  background-color: white;
+
 }
 
 .success-toast{
@@ -287,14 +289,24 @@ height:10vh;
   background-color: #95e643;
 }
 
-.success-toast2{
+.success-toast2, .error-toast2{
   color: #1f2b1e;
-  background-color: white;
+  background-color: white !important;
 }
 
 .error-toast{
   background-color: red;
   color:white;
+}
+
+.warning-toast{
+  background-color: yellow;
+  color:black;
+}
+
+.warning-info{
+  background-color: yellow;
+  color:black;
 }
 
 /* checkout page */

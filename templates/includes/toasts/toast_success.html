@@ -1,4 +1,4 @@
-<div class="toast show-me" role="alert" aria-live="assertive" aria-atomic="true" autohide="false">
+<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" autohide="false">
   <div class="toast-header success-toast">
       {{ message }}
     <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -13,7 +13,7 @@
                  <img src="{{item.product.image.url}}" class="card-img-top-toast" alt="{{product.name}}">
              {% else %}
              <a href="" >
-               <img src="/media/onimg2.png" class="card-img-top-toast" alt="{{product.name}}">
+               <img src="/media/onimg2.png" class="card-img-top-toast" alt="error image">
              </a>
              {% endif %} 
         </div>
