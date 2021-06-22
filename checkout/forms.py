@@ -21,14 +21,14 @@ class OrderForm(forms.ModelForm):
             'town_or_city': 'Town or City',
             'postcode': 'Postal code',
             'country': 'Country',
-            'county': 'County'
+            'county': 'County',
             }
-        self.fields["full_name"].widget.attrs['autofocus'] = True
+
+        self.fields['full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if self.fields[field].required:
-                placerholder = f'{placerholders[field]}*'
+                placeholder = f'{placerholders[field]}*'
             else:
-                placerholder = placerholders[field]
-            self.fields[field].widget.attrs['placerholder'] = placerholder
-            self.fields[field].widget.attrs['class'] = 'style-input'
+                placeholder = placerholders[field]
+            self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].label = False

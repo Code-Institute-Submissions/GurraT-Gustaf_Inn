@@ -15,7 +15,7 @@ def checkout(request):
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
-        'order': order,  
+        'order': order
     }
     
     return render(request, template, context)

@@ -95,11 +95,11 @@
 
       {% block postloadjs %}
       <script type="text/javascript">
-      console.log('post load js')
+      //console.log('post load js')
         var toastElList = [].slice.call(document.querySelectorAll('.toast'))
         var toastList = toastElList.map(function(toastEl) {
         // Creates an array of toasts 
-          console.log("toast")
+         // console.log("toast")
           return new bootstrap.Toast(toastEl).show() 
         });
       </script>
