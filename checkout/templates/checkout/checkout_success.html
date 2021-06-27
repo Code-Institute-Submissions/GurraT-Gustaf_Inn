@@ -7,7 +7,6 @@
 {% endblock %}
 
 {% block content %}
-
 <div class="container section-margin">
   <div class="row">
   <div class="col-12 text-center section-title">
@@ -22,6 +21,52 @@
           <span> Keep Shopping </span>
         </a>
 </div>
+    </div>
+    <div class="container border border-3 mt-3 text-center">
+    <div class="col-12 mt-3">
+      <div class="row">
+        <div class="col-12">
+          <p><strong>ORDER INFO</strong></p>
+          <p>Order number: {{ order.order_number }}</p>
+          <p>Order date: {{ order.date }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12">
+          <p><strong>ORDER DETAIL</strong></p>
+          {% for item in order.lineitems.all %}
+          <p>{{ item.quantity }} pcs of  {{ item.product.name }} for ${{ item.product.price }} &pi; / each </p>
+          {% endfor %}
+          <p>Items cost: {{ order.order_total }} &pi;</p>
+          <p>Delivery cost: {{ order.delivery_cost }} &pi;</p>
+          <p><u>Total cost: <strong>{{ order.grand_total }} &pi;</strong></u></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12">
+          <p><strong>SENT TO</strong></p>
+          <p> Name: {{ order.full_name }}</p>
+          <p> Delivery adress: {{ order.delivery_adress }} </p>
+          <p> Postcode: {{ order.postcode }} </p>
+          <p> City: {{ order.town_or_city }}</p>
+          <p> County: {{ order.county }}</p>
+          <p> Country: {{ order.country }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12">
+          <p><strong>Additional information</strong></p>
+          <p> Email: {{ order.email }}</p>
+          <p> Phone number: {{ order.phone_number }} </p>
+        </div>
+      </div>
+    </div>
     </div>
   </div>
 
