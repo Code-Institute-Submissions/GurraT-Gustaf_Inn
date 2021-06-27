@@ -54,6 +54,8 @@ class StripeWH_Handler:
                     delivery_adress__iexact=shipping_details.address.line2,
                     county__iexact=shipping_details.address.state,
                     grand_total=grand_total,
+                    original_bag=bag,
+                    stripe_pid=pid,
                 )
                 order_exists = True
                 break
@@ -77,6 +79,8 @@ class StripeWH_Handler:
                     street_adress=shipping_details.address.line1,
                     delivery_adress=shipping_details.address.line2,
                     county=shipping_details.address.state,
+                    original_bag=bag,
+                    stripe_pid=pid,
                 )
                 for item_id, item_data in json.loads(bag).items():
                     product = Product.objects.get(id=item_id)
