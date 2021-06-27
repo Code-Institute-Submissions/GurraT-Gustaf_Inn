@@ -25,8 +25,10 @@
    <fieldset class="px-3 mb-5">
      <legend>Delivery</legend>
      {{order_form.phone_number | as_crispy_field}}
+     {{order_form.street_adress | as_crispy_field}}
      {{order_form.delivery_adress| as_crispy_field }}
      {{order_form.postcode | as_crispy_field}}
+     {{order_form.town_or_city | as_crispy_field}}
      {{order_form.county | as_crispy_field}}
      {{order_form.country | as_crispy_field}}
    </fieldset>
@@ -37,7 +39,7 @@
     <!-- Used to display form errors -->
     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
     <!-- Pass the client secret to the view so we can get the payment intent id -->
-    <input type="hidden" value="" name="client_secret">
+    <input type="hidden" value="{{ client_secret}}" name="client_secret">
 </fieldset>
    <div class="text-center my-3">
      You choosen following items: <br>{% for item in bag_items %} {{item.quantity}} pcs of {{item.product.name}}, {% endfor %} and will be charged with {{ grand_total }} &pi; 
