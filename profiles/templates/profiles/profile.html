@@ -9,10 +9,29 @@
 <div class="container section-margin">
   <div class="row">
   <div class="col-12 text-center section-title">
-    <p> Welcome {{profile}} </p>
+    <p> My Profile </p>
  </div> 
 </div>
+<div class="row">
+<div class="col-6 mt-3">
+  <p>User Information</p>
+  <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
+    {% csrf_token %}
+    {{ form|crispy}}
+    <button class="mt-3 btn add_to_bag_button">Update information</button>
+  </form>
+</div>
+<div class="col-6 mt-3">
+  <p>Order History</p>
+  {{ orders }}
+</div>
+</div>
   </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
 {% endblock %}
 
 
