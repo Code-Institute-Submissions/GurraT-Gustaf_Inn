@@ -4,8 +4,10 @@
 
 {% block head_title %}{% trans "E-mail Addresses" %}{% endblock %}
 
-{% block content %}
+{% block inner_content %}
+<div class="border-bottom mb-3 text-center">
     <h1>{% trans "E-mail Addresses" %}</h1>
+</div>
 {% if user.emailaddress_set.all %}
 <p>{% trans 'The following e-mail addresses are associated with your account:' %}</p>
 
