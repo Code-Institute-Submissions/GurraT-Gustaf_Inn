@@ -135,31 +135,35 @@ def checkout(request):
 
     return render(request, template, context)
 
+
 def checkout_success(request, order_number):
     """
     Handle successful checkouts
     """
     save_info = request.session.get('save_info')
+    print("save_info", save_info)
     order = get_object_or_404(Order, order_number=order_number)
+    print("order", order)
 
     #Attach the user's profile to the order
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        print("auth profile", profile) 
+        order.user_profile = profile
+        order.save()
 
-    profile = UserProfile.objects.get(user=request.user)
-    order.user_profile = profile
-    order.save()
-
-    if save_info:
-        profile_data = {
-            'default_phone_number': order.phone_number,
-            'default_street_adress': order.street_adress,
-            'default_delivery_adress': order.delivery_adress,
-            'default_town_or_city': order.town_or_city,
-            'default_postcode': order.postcode,
-            'default_county': order.county,
-        }
-        user_profile_form = UserProfileForm(profile_data, instance=profile)
-        if user_profile_form.is_valid():
-            user_profile_form.save()
+        if save_info:
+            profile_data = {
+                'default_phone_number': order.phone_number,
+                'default_street_adress': order.street_adress,
+                'default_delivery_adress': order.delivery_adress,
+                'default_town_or_city': order.town_or_city,
+                'default_postcode': order.postcode,
+                'default_county': order.county,
+            }
+            user_profile_form = UserProfileForm(profile_data, instance=profile)
+            if user_profile_form.is_valid():
+                user_profile_form.save()
 
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \

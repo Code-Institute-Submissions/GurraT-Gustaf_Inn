@@ -43,6 +43,19 @@
    <div class="text-center my-3">
      You choosen following items: <br>{% for item in bag_items %} {{item.quantity}} pcs of {{item.product.name}}, {% endfor %} and will be charged with {{ grand_total }} &pi; 
    </div>
+  
+   <div class="form-check form-check-inline float-right mr-0">
+    {% if user.is_authenticated %}
+      <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
+                      <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
+    {% else %}
+      <label class="form-check-label" for="id-save-info">
+                          <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
+                          <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
+                      </label>
+    {% endif %}
+  </div>
+
    <div class="text-center">
     <a href="{% url 'view_bag' %}" class="btn shop-now-button">
       <span> Adjust Bag </span>
