@@ -24,22 +24,22 @@
   </form>
 </div>
 <div class="col-6 mt-3">
-  <div class="row mt-3">
+  <div class="row">
     <span class="text-center">
     <p><strong>Order History</strong></p>
   </span>
   {% for order in orders %}
-  <div class="col-4"> <p><strong>Order number:
-    <a href="{% url 'order_history' order.order_number %}" title="{{order.order_number}}">{{order.order_number|truncatechars:6}}</a>
+  <div class="border mx-3 text-center row">
+  <div class="col-12 text-center"> <p><strong>Order number:
+    <a href="{% url 'order_history' order.order_number %}" title="{{order.order_number}}">{{order.order_number|truncatechars:8}}</a>
   </strong></p> </div>
-  <div class="col-4"><p><strong>Date: {{order.date}}</strong></p></div>
+  <div class="col-12 text-center"><p><strong>Date: {{order.date}}</strong></p></div>
     {% for item in order.lineitems.all %}
-      <div class="col-4"><p><strong>Items:{{item.product.name}} x {{item.quantity}}</strong></p></div>
+      <div class="col-12 text-center"><p><strong>Items:{{item.product.name}} x {{item.quantity}}</strong></p></div>
     {% endfor %}
-  <div class="col-4"><p><strong>Order Total: {{order.grand_total }}</strong></p></div>
-
+  <div class="col-12 text-center"><p><strong>Order Total: {{order.grand_total }}</strong></p></div>
+</div>
   {% endfor %}
-  <div class="col-4"></div>
  </div>
 </div>
 </div>
