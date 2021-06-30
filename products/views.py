@@ -79,9 +79,6 @@ def add_product(request):
         messages.error(request, f'Sorry only store owner can do that!')
         return redirect(reverse('home'))
 
-    form = ProductForm()
-    template = "products/add_product.html"
-
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
@@ -92,13 +89,16 @@ def add_product(request):
             messages.error(request, 'Failed adding new product. Make sure form is valid!')
     else:
         form = ProductForm()
-
+    
+    form = ProductForm()
+    template = "products/add_product.html"
 
     context = {
         'form': form,
     }
 
     return render(request, template, context)
+
 
 @login_required
 def edit_product(request, product_id):

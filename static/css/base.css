@@ -430,3 +430,16 @@ margin-top: 30vh;
   font-size: 8px;
 }
 
+/* Product Form */
+
+.btn-file {
+position: relative;
+overflow: hidden;
+}
+
+.btn-file input[type="file"]{
+  position: absolute;
+  opacity:0;
+  cursor: pointer;
+}
+}
