@@ -145,6 +145,9 @@
 
 ### Acknowledgements
 
+- Large part of the code is from inspirations from lecture from code institute and pictures is extracted from pexels.com,
+next version of this document will be more specific about this part...
+
 - I am grateful for the feedback and constructive comments I got from my mentor Aaron Sinnott at Code Institute e.g., through helping me setting up a realistic schedule and give me inputs on my design and the functions within my application 
 #### I also want to thanks following people
 
