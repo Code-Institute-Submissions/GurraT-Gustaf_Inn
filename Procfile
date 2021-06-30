@@ -1,0 +1,1 @@
+web: gunicorn Gustaf_Inn.wsgi.application
