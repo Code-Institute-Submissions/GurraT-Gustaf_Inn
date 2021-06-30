@@ -136,6 +136,23 @@ border: solid 1px #232b22;
   color: white;
   border: solid 1px #697966;
 }
+
+.shop-now-button2{
+  align-items: left;
+  font-family: "Arial";
+  font-size: 14px;
+  font-weight: bold;
+  color: #1f2b1e;
+  background-color: #95e643;
+  border: solid 1px #232b22;
+  }
+  
+  .shop-now-button2:hover{
+    background-color: #84c541;
+    color: white;
+    border: solid 1px #697966;
+  }
+
 /* product section */
 
 .section-margin{
@@ -212,6 +229,16 @@ border: solid 1px #232b22;
 
 .add_to_bag_button{
   align-items: center;
+font-family: "Arial";
+font-size: 14px;
+font-weight: bold;
+color: #f1e9e9;
+background-color:  #555361;
+border: solid 1px #100e19;
+}
+
+.add_to_bag_button2{
+  align-items: left;
 font-family: "Arial";
 font-size: 14px;
 font-weight: bold;
