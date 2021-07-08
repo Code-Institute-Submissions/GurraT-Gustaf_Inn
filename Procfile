@@ -1,1 +1,1 @@
-web: gunicorn Gustaf_Inn.wsgi.application
+web: gunicorn Gustaf_Inn.wsgi:application
