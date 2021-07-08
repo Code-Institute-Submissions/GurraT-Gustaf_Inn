@@ -115,7 +115,6 @@ LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 
 
-
 WSGI_APPLICATION = 'Gustaf_Inn.wsgi.application'
 
 
