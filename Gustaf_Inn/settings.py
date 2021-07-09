@@ -179,7 +179,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if 'USE_AWS' in os.environ:
-   AWS_STORAGE_BUCKET_NAME = 'gustaf-inn-static-files-user'
+   AWS_STORAGE_BUCKET_NAME = 'Wizard_Inn'
    AWS_S3_REGION_NAME = 'eu-north-1'
    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY')
    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY') 
