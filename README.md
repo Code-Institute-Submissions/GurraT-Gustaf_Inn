@@ -2,7 +2,7 @@
 
 ![Mock-up](static/documentation/mockup.png "Mock-up Wizard Inn")
 
-#### The aim of this website is to offer trading-platform were users can search, select and buy items with extraordinary properties such as magic amulettes. Users will be able to search for specific items, select items of interest, add them to a shopping bag and buy items of interest. Bought items will be confirmed by email and sent to prefered delivery adress. Furthermore user will be able to set up their own profile space were they can for instance get shopping histories. The code for this project is found [here](https://totebo.herokuapp.com/ "Link to Wizard Inn deployed homepage")
+#### The aim of this website is to offer trading-platform were users can search, select and buy items with extraordinary properties such as magic amulettes. Users will be able to search for specific items, select items of interest, add them to a shopping bag and buy items of interest. Bought items will be confirmed by email and sent to prefered delivery adress. Furthermore user will be able to set up their own profile space were they can for instance get shopping histories. The code for this project is found [here](https://dashboard.heroku.com/apps/gustaf-inn "Link to Wizard Inn deployed homepage")
 
 
 ------
@@ -16,16 +16,16 @@
 
 #### The features on the website will:
 - Give users the possibility to search, select and buy items
-- Give superusers such as store owner a chance to create, update, delete and edit product informations
-- Give users a to opportunity to create their own profile page and see earlier shopping history
+- Give superusers such as store owner a chance to create, update, delete and edit product information
+- Give users an opportunity to create their own profile page and see earlier shopping history
 
 
 #### I will achieve this by:
-- By allowing user search, select and buy items and add their delivery information on a shipping form
+- By allowing user to search, select and buy items and add their delivery information on a shipping form
 - By allowing user to edit their shopping bag
-- By allowing registerd user to see their shopping history
-- By allowing users to get an confirmation email when the order an item
-- By allowing superuser such as storeowner to add, delete, edite and update information such as product details and user profiles
+- By allowing registered user to see their shopping history
+- By allowing users to get an confirmation email when they order an item
+- By allowing superuser such as storeowner to add, delete, edit and update information such as product details and user profiles
 
 ## User Goal
 
@@ -34,7 +34,7 @@
 
 ### User Stories
 
-#### As a person interested in mystic items, I want to have a website were 
+#### As a person interested in mystic items, I want to have a website where 
 
 1.	I can find, select and buy items such as amulettes and cristals (see our stock pages [here]( https://totebo.herokuapp.com/get_stockinfo  "Example from stocks page"))
 2.	I search for items connected to my interest (see our stock pages [here]( http://totebo.herokuapp.com/profile/user  "Example from profile page"))
@@ -54,21 +54,20 @@
 ### Design Choices
 
 #### Typology
-![Typology](static/documentation/topology.png ,"Typography Wizard Inn")
+![Typology](static/documentation/topology.png "Typography Wizard Inn")
 
 #### Fonts 
-- I used standards fonts and fonts connected to [bootstrap]( https://getbootstrap.com/ ) as well as Oleo Script from [Google Fonts]( https://fonts.google.com/ ) to create a predictive behaviour of my font over several web browsers but also give some personality to my titles
+I used standards fonts and fonts connected to [bootstrap]( https://getbootstrap.com/ ) as well as Oleo Script from [Google Fonts]( https://fonts.google.com/ ) to create a predictive behaviour of my font over several web browsers but also give some personality to my titles
 
 #### Colors
 
-- I focused mainly on black, white, gray colortheme to create a clear, simple and easy to read webpage, the aim is that background image should draw attention to the products and main messages
+I focused mainly on black, white, gray colortheme to create a clear, simple and easy to read webpage, the aim is that background image should draw attention to the products and main messages
 
 #### Wireframe
 [Wireframe](static/documentation/ShopInn.pdf "Wireframe Wizard Inn")
 
 #### Databases
-
-
+I used [Postgres](https://www.postgresql.org/ "Postgres") for relational databasehandling
 
 ## Technologies Used
 
@@ -81,8 +80,18 @@
 - Python
   - Used for setting up environment and conditions for running the application
 - JavaScript
+  -  Used for connecting activate functions within 
+  materializecss components such as dropdown-picker and date picker for calendar function 
+
 
 ...
+
+### Frameworks
+
+- Django
+  - Used as the main framework to construct this plattform
+
+
 
 ### Libraries
 
