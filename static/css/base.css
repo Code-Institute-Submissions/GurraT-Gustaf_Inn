@@ -32,7 +32,7 @@ header{
 }
 
 .mypage_icon{
-  color: #cebfc4;
+  color: white;
   /*color:#ff981f;
   text-shadow: #8a1712 0.2px 0.2px;*/
 }
@@ -47,12 +47,13 @@ color:#95e643;
 }
 
 .empty_text{
-  color:#e63b3b;
+  color:#f9717f;
+  text-shadow: 0.5px 0.5px white;
 }
 
 
 .nav-link, #hamburgermenu {
-  color: #cebfc4 !important;
+  color: white !important;
     font-size: 18px;
   font-family: "Oleo Script";
   /*color:#8a1712;

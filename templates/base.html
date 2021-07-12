@@ -46,22 +46,33 @@
               <p class="text-center logo">Wizard Inn</p>
             </a>
         </div>
-        {% include 'includes/search-field.html' %}
-        <div class="col-1"></div>
+        <div class="col-2"></div>
         {% include 'includes/my-account-button.html' %}
       </div>
+      <div class="row">
+      <div class="col-4"></div>
+      {% include 'includes/search-field.html' %}
+    </div>
+    <div class="row">
+      <div class="col-3"></div>
           {% include 'includes/main-nav.html' %}
+        </div>
         </div> 
         <!-- Header view on all device except large device-->
         <div class="mt-1 mb-3 d-block d-lg-none">
           <div class="row">
+            <div class="col-4">
             {% include 'includes/hamburger-menu.html' %}
+          </div>
           <div class="col-4 text-center">
             <a href="{% url 'home' %}" class="btn">
               <p class="text-center logo my-0">Wizard Inn</p>
             </a>
         </div>
+        <div class="row">
+          <div class="col-2"></div>
         {% include 'includes/my-account-button.html' %}
+      </div>
       </div>
       <div class="row">
       <div class="col-2"></div>

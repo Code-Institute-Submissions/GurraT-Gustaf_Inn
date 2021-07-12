@@ -1,3 +1,17 @@
 from django.contrib import admin
+from .models import Reviews
 
-# Register your models here.
+
+class BlogAdmin(admin.ModelAdmin):
+    list_display = (
+        "productname",
+        "title",
+        "reviews",
+        "alias",
+        "date",
+    )
+    
+    ordering =('date',)
+
+
+admin.site.register(Reviews,BlogAdmin)
