@@ -94,6 +94,8 @@ I used [Postgres](https://www.postgresql.org/ "Postgres") for relational databas
   - Used as a storage place for media files and informations sent to the platform
 - Amazon IAM
   - Used to handling userprofile, premissions and access control for users on the trading platform
+- Stripe 
+  - Used for a managing payment details
 
 
 ### Libraries
@@ -107,6 +109,8 @@ I used [Postgres](https://www.postgresql.org/ "Postgres") for relational databas
   - Used for send send informations between server and act as a Python WSGI HTTP Server
 - Boto3
   - Used for create, configure, and manage connection between amazone webservices
+- django-countries
+  - Used for adding default value in to country fields within forms
 
 ### Tools
 - Git
@@ -266,8 +270,7 @@ ___
     if "user" in session:
 
 ### Know bugs
-- Contrast between mainsection background and text can be further optimized but acceptable as it is at the moment
-- Some of the image affects the prestanda and could be changed for next version
+- Companyinfo app malfunctioning after git breakdown
 
 
 
