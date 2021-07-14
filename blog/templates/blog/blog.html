@@ -24,10 +24,7 @@
         <p class="card-text">{{review.reviews}}</p>
         {% if request.user.is_superuser %} 
             <div class=" mt-3 ">
-              <a href="{% url 'edit_review' review.id %}" class="btn shop-now-button2">
-                <span> Edit </span>
-              </a>
-              <a href="" class="btn add_to_bag_button2">
+              <a href="{% url 'delete_review' review.id %}" class="btn add_to_bag_button2">
                   <span> Delete </span>
                 </a>
             </div>
@@ -36,12 +33,9 @@
       <div class="card-footer text-muted">
         {{review.date}} - {{review.alias}}
       </div>
-      {% for comment in commentreviews %}
       <div>
-        <p class="card-text">{{comment.date}} - {{comment.alias}}</p>
-        <p class="card-text">{{review.comments}}</p>
+        <p class="card-text"> {{review.comments}}</p>
       </div>
-      {% endfor %}
     </div>
   </div>
     {% endfor %}

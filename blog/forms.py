@@ -15,6 +15,7 @@ class ReviewForm(forms.ModelForm):
 
 
 class CommentReviewForm(forms.ModelForm):
+    # not in use at the moment could be used for adding comments to reviews
 
     class Meta:
         model = CommentReviews

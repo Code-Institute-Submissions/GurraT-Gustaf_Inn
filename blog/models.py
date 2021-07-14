@@ -20,8 +20,8 @@ class Reviews(models.Model):
         return self.title
 
 class CommentReviews(models.Model):
-    title = models.ForeignKey('Reviews', null=True, blank=True, on_delete=models.SET_NULL)
-    alias = models.CharField(max_length=68)
+    # not in use at the moment, could be used to add comments to reviews
+    Title = models.OneToOneField(Reviews, on_delete=models.CASCADE, related_name="comment")
     date = models.DateTimeField(auto_now_add=True)
     comments = models.TextField(max_length=564)
 

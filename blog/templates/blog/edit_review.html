@@ -1,3 +1,5 @@
+<!-- not in use at the moment could be used for adding comments to reviews-->
+
 {% extends 'base.html' %}
 {% load static %}
 
@@ -14,7 +16,7 @@
         <form class="text-center" method= "POST" action="{% url 'edit_review' review.id %}" entype="multipart/form-data">
         {% csrf_token %}
         {% for field in form %}
-            {{ field }}
+        {{ field | as_crispy_field}}
         {% endfor %}
         <div class="text-center mt-3">
             <a href="{% url 'blog' %}" class="btn add_to_bag_button">Cancel</a>

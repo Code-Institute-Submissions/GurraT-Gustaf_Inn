@@ -13,9 +13,10 @@
         <a class="dropdown-item" href="{% url 'account_signup'%}">Register</a>
         <a class="dropdown-item" href="{% url 'account_login'%}">Login</a>
       {% endif %}
+       <a class="dropdown-item" href="{% url 'companyinfo'%}">Company Info</a>
     </ul>
     <a href="{% url 'view_bag' %}" class="shopbag btn text-center fs-5 {% if grand_total %} purchase_text {% else %} empty_text {% endif %}"> <i class="fas fa-shopping-bag"></i>
-    <span> 
+      <span> 
       {% if grand_total %}
         {{grand_total|floatformat:2}}&pi;
       {% else %}

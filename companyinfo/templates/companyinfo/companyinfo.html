@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container section-margin">
+    <div class="col-12 text-center section-title">
+        <p> Company News </p>
+     </div>
+     <div class="row  text-center my-3">
+         <div class="col-2"></div>
+         {% for news in companyinfo %}
+         <div class="col-8 bg-light border border-2">
+             <h4 class="my-2">Title</h4>
+             <h6> News</h6>
+             <p> Date </p>
+         </div>
+         {% endfor %}
+     </div>
+</div>
+
+{% endblock %}
