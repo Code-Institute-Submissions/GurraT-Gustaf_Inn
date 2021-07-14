@@ -24,12 +24,6 @@
         <p class="card-text">{{review.reviews}}</p>
         {% if request.user.is_superuser %} 
             <div class=" mt-3 ">
-<<<<<<< HEAD
-              <a href="{% url 'edit_review' review.id %}" class="btn shop-now-button2">
-                <span> Add Comment</span>
-              </a>
-=======
->>>>>>> 02c3a0e493943218c9b52183ff524a90dd889041
               <a href="{% url 'delete_review' review.id %}" class="btn add_to_bag_button2">
                   <span> Delete </span>
                 </a>

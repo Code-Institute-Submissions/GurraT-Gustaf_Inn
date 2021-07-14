@@ -20,10 +20,7 @@ class Reviews(models.Model):
         return self.title
 
 class CommentReviews(models.Model):
-<<<<<<< HEAD
-=======
     # not in use at the moment, could be used to add comments to reviews
->>>>>>> 02c3a0e493943218c9b52183ff524a90dd889041
     Title = models.OneToOneField(Reviews, on_delete=models.CASCADE, related_name="comment")
     date = models.DateTimeField(auto_now_add=True)
     comments = models.TextField(max_length=564)
