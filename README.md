@@ -236,54 +236,19 @@ LOGIN_REDIRECT_URL ='/'
 _____________________________
 
 #### Deploying code through Heroku was conducted through by
-- First pushing code to github, writing "git add -A", "git commit -m "messages" ", "git push" in the gitpod terminal
+- First pushing code to github, writing "git add .", "git commit -m "messages" ", "git push" in the gitpod terminal
 - To connected the Github repository to Heroku, the deploy menu of the totebo app in Heroku was selected
 - Within the deployment menu the icon "connect to GitHUb" was selected followed by selecting the repository "totebo trading" and then choosing "main branch" and select "connect", follow by deploy branch
 - To see if the deployment works the icon "view" was pressed
 
 ## Testing
 
-- I conducted manual testing and used Lighthouse, google inspection tool, W3C validator(Html/CSS), JsHint (JavaScript)and PEP8 online checker(python) for automated validation see results below
+- I conducted manual testing and used refactor code to find error and beatify code.
 
 ### Manual testing
 - [Protocol/Manual testing](static/documentation/Manualtesting.pdf "Manual Testing")
 
 *Manual test has been tried through forcing code to break as well as testing that right code works, e.g. adding condition that is not allowed in forms input and making sure that the validation notice this, further more all pages has been troughly tested by clicking on all functions and making sure the routing and commands work as they should
-
-### Automated testing of index page
-- [W3C Html validation](static/documentation/html_validation_basetemplate.png "Html Testing of index page")
-- [Result from lighthouse for large device](static/documentation/lighthouse_ld_basetemplate.png "Test index page on computer through Lighthouse")
-- [Result from lighthouse for mobile device](static/documentation/lighthouse_mob_basetemplate.png "Test index page on mobile devices through Lighthouse")
-
-### Automated testing of login page
-- [W3C Html validation](static/documentation/html_validation_login.png "Html Testing of login page")
-- [Result from lighthouse for large device](static/documentation/lighthouse_ld_login.png "Test login page on computer through Lighthouse")
-- [Result from lighthouse for mobile device](static/documentation/lighthouse_mob_login.png "Test login page on mobile devices through Lighthouse")
-
-### Automated testing of register page
-- [W3C Html validation](static/documentation/html_validation_register.png "Html Testing of register page")
-- [Result from lighthouse for large device](static/documentation/lighthouse_ld_register.png "Test register page on computer through Lighthouse")
-- [Result from lighthouse for mobile device](static/documentation/lighthouse_mob_register.png "Test register page on mobile devices through Lighthouse")
-
-### Automated testing of profile page
-- [W3C Html validation](static/documentation/html_validation_profile.png "Html Testing of profile page")
-- [Result from lighthouse for large device](static/documentation/lighthouse_ld_profile.png "Test profile page on computer through Lighthouse")
-- [Result from lighthouse for mobile device](static/documentation/lighthouse_mob_profile.png "Test profile page on mobile devices through Lighthouse")
-
-### Automated testing of message page
-- [W3C Html validation](static/documentation/html_validation_toolbox.png "Html Testing of message page")
-- [Result from lighthouse for large device](static/documentation/lighthouse_ld_message.png "Test message page on computer through Lighthouse")
-- [Result from lighthouse for mobile device](static/documentation/lighthouse_mob_message.png "Test message page on mobile devices through Lighthouse")
-
-### Automated testing of stock market page
-- [W3C Html validation](static/documentation/html_validation_stockmarket.png "Html Testing of stock market page")
-- [Result from lighthouse for large device](static/documentation/lighthouse_ld_stockmarket.png "Test stock market page on computer through Lighthouse")
-- [Result from lighthouse for mobile device](static/documentation/lighthouse_mob_stockmarket.png "Test stock market page on mobile devices through Lighthouse")
-
-### Automated testing of add_info page
-- [W3C Html validation](static/documentation/html_validation_editstock.png "Html Testing of add_info page")
-- [Result from lighthouse for large device](static/documentation/lighthouse_ld_add_info.png "Test add_info page on computer through Lighthouse")
-- [Result from lighthouse for mobile device](static/documentation/lighthouse_mob_add_info.png "Test stock market page on mobile devices through Lighthouse")
 
 ### Fixed Bugs
 
