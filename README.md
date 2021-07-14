@@ -163,7 +163,7 @@ I used [Postgres](https://www.postgresql.org/ "Postgres") for relational databas
 -	Django was intialized adding following statement in the gitpod terminal
     - pip3 install django
     - django-admin startproject Gustaf_Inn
-- To store sensitive information I created a gitignore-file adding following statement in teerminal
+- To store sensitive information I created a gitignore-file adding following statement in terminal
     - touch .gitignore
 - In order to create my apps where i stored my information such url-pathway, models, views and forms I added following statement in the terminal
     - python3 manage.py startapp "appname"
@@ -172,70 +172,68 @@ I used [Postgres](https://www.postgresql.org/ "Postgres") for relational databas
 - For most folder app I started with creating a model
 - For most model I connected them to an admin view writing my code in each app folders admin
 - To use the information from the admin database I created a form in each app folder
-- Informations from the model and forms was than added to each folders view and link to templates within the app folders template folder
--To activate the template I added a path in the urls.py in each folder
+- Informations from the model and forms was than added to each folders view and linked to templates within the app folders template folder
+- To activate the template I added a path in the urls.py in each folder
 
 
 ### Setting up template and static folder
-- In order to built my trading platform i used a basetemplate found in the template folder called base.html, this template was used to link all metatags, base css-code, links to googlefonts, fontawesome and webservices as stripe
+- In order to built my trading platform i used a basetemplate stored in the template folder called base.html, this template was used to link all metatags, base css-code, links to googlefonts, fontawesome and webservices as stripe
 - I also created a static folder were i stored my image files, my css and my documentations
 
 ### Setting up a super.user and builtin authentication system 
 - In order to login in to my admin page and to set up function specific for my store owner i created a super.user adding following statement to the git pod terminal
+    
     - python3 manage.py create a superuser 
-- Furthermore I sat up a authentication system adding following statement to the git pod terminal
-    -pip3 install django-allauth
+
+- Furthermore I sat up an authentication system adding following statement to the git pod terminal
+    - pip3 install django-allauth
+
 -  The alluath templates were stored in the template folder
-- To active the allauth in added following statement in the settings folder in Gustaf_I
+- To active the allauth I added following statement in the settings folder in Gustaf_Inn
+    'django.contrib.auth',
+    'django.contrib.messages',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 
+- EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+ACCOUNT_USERNAME_MIN_LENGTH = 3
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL ='/'
 
--	To start with the GitHub repository was open via Gitpod editor
--	Within gitpod an operating system was set up by first installing Flask, through printing following code within the editor “pip3 install Flask” and then” import os”
--	After installation of flask, an app.py and env.py was created in the base directory of the repository
--	Within the env.py file the base environment for the app was set up as follow
-_____________________________
-    import os
-    os.environ.setdefault("IP", "0.0.0.0")
-    os.environ.setdefault("PORT", "5000")
-    os.environ.setdefault("SECRET_KEY", “<password>”>
-    os.environ.setdefault("MONGO_URI", "mongodb+srv://root:<mongopassword>@cluster0.k22xz.mongodb.net/totebo?retryWrites=true&w=majority")
-    os.environ.setdefault("MONGO_DBNAME", "totebo")
-    __________________________
+### Set up model and activate postgres
 
-*the SECRETE_KEY was chosen randomly and was later used to connect the repository to Heroku app, MONG_URI was selected by navigated to MongoDB Atlas Collection, pressing connect and selecting "connect your application" and copy the address within the address field and paste it to the os environment for MONGO_URI change the password and collections address. The password for the MONGO_URI address was retrieved from "Database Access" within MongoDB selecting edit.
+- Django database was set up using python code and migrated to admin using following code
+  - python3 manage.py makemigrations
+  - python3 manage.py migrate
 
-- To connect the code within the env.py file with app.py file following code was inserted to the app.py file
-_______________
-    import os
-    from flask import Flask
+- To store the data within postgres relational database following code was conduted within the terminal
+  - pip3 install dj_database
+  - pip3 install psycopg2-binary
 
-    if os.path.exists("env.py"):
-    import env
+### Setting up AWS s3, IAM
+  - Storage space and payment system at amazone was set up in accordance with instruction on amazone homepage, followed by setting up key to amazone service in the git pod settings followed by command stated below in the git terminal
+    - pip3 install boto3
+    - pip3 install django-storages
+- Additionally following information where added to the settings in the Gustaf_inn folder
+    -  AWS_STORAGE_BUCKET_NAME = 'Wizard_Inn'
+    - AWS_S3_REGION_NAME = 'sts.eu-north-1'
+    - AWS_ACCESS_KEY_ID = os.environ.get- ('AWS_ACCESS_KEY')
+    - AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY') 
+    - AWS_S3_CUSTOM_DOMAIN = f'- {AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'  
 
-    if __name__ == "__main__":
-    app.run(os.environ.get("IP"), port=int(os.environ.get("PORT")), debug=True)
-________________________________
-
-- To avoid that sensitive information was revealed the env.py was then stored in the gitignore file
-- To be able to use python code gitignore to communicate with the MongoDB pymongo package was needed to installed, this was done writing "pip3 install flask-pymongo" in the gitpod terminal 
-- Additionally, following code was inserted to the app.py file
-_______
-    from flask_pymongo import PyMongo
-    mongo = PyMongo(app)
-___________________
 ### To be able to push and connected the GitHub repository to Heroku following step was conducted
-- A requirement.txt file for running app.py was set up, writing following statement in the gitpod terminal "pip3 freeze --local > requirements.txt"
+- A requirement.txt file for running app.py was set up, writing following statement in the gitpod terminal "pip3 freeze -- > requirements.txt"
 - After setting up the requirement file a Procfile was constructing telling Heroku that app.py was used as the main file for running the website, this was done via running following command in the gitpod terminal "echo web: python app.py > Procfile"
-### To be able to connect the MongoDB Atlas to Heroku following step was conducted
-- In the Heroku under "Setting" the same information as in the env.py was set up
+### To be able to connect Django to Heroku following step was conducted
+- In the Heroku under "Setting" the same information as stated in git pod varibles (keys for stripe, amazone, ) was set up
 _____________________________
-    os.environ.setdefault("IP", "0.0.0.0")
-    os.environ.setdefault("PORT", "5000")
-    os.environ.setdefault("SECRET_KEY", “<password>”>
-    os.environ.setdefault("MONGO_URI", "mongodb+srv://root:<mongopassword>@cluster0.k22xz.mongodb.net/totebo?retryWrites=true&w=majority")
-    os.environ.setdefault("MONGO_DBNAME", "totebo")
-    ___________________________________
 
 #### Deploying code through Heroku was conducted through by
 - First pushing code to github, writing "git add -A", "git commit -m "messages" ", "git push" in the gitpod terminal
