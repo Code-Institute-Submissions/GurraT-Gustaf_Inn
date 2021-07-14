@@ -244,6 +244,7 @@ _____________________________
 - To connected the Github repository to Heroku, the deploy menu of the totebo app in Heroku was selected
 - Within the deployment menu the icon "connect to GitHUb" was selected followed by selecting the repository "totebo trading" and then choosing "main branch" and select "connect", follow by deploy branch
 - To see if the deployment works the icon "view" was pressed
+- Endproduct is found at (Wizard Inn)[https://gustaf-inn.herokuapp.com/]
 
 ## Testing
 
@@ -271,13 +272,13 @@ ___
 
 ### Know bugs
 - Companyinfo app malfunctioning after git breakdown
-
-
-
-!!!!!!!!!!!
+- Code not beatified to full extens because of shortage of time
 
 
 ### Acknowledgements
+
+### Mediafiles
+- For my pages I collected the images from licenced or free to use sources, such as [Pexel.com](https://www.pexels.com/), [klipartz](https://www.klipartz.com),[freepik](www.freepik.com), [bing](bing.com) and [serpentsoundstudios](www.serpentsoundstudios.com)
 
 - Large part of the code is from inspirations from lecture from code institute 
 

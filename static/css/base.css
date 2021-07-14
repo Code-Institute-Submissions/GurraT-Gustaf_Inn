@@ -157,7 +157,7 @@ border: solid 1px #232b22;
 /* product section */
 
 .section-margin{
-  margin-top: 34vh;
+  margin-top: 48vh;
   margin-bottom: 30vh;
   border-right: white 42px solid;
   border-left: white 42px solid;
@@ -217,7 +217,7 @@ border: solid 1px #232b22;
 /* product_detail page */
 
 .section-detail-margin{
-  margin-top: 40vh;
+  margin-top: 48vh;
   border-right: white 42px solid;
   border-left: white 42px solid;
   border-bottom: white 10px solid;
@@ -391,15 +391,15 @@ background-color: white;
 }
 
 .section-margin{
-  margin-top: 32vh;
+  margin-top: 38vh;
 }
 
 .section-title{
-  font-size: 32px;
+  font-size: 38px;
 }
 
 .section-detail-margin{
-margin-top: 30vh;
+margin-top: 32vh;
 }
 
 .product_detail{
