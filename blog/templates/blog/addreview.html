@@ -15,11 +15,7 @@
         <form class="text-center" method= "POST" action="{% url 'add_review' %}" entype="multipart/form-data">
         {% csrf_token %}
         {% for field in form %}
-          {% if field.name != 'image' %}
             {{ field | as_crispy_field}}
-          {% else %}
-            {{ field }}
-          {% endif %}
         {% endfor %}
         <div class="text-center mt-3">
             <a href="{% url 'blog' %}" class="btn add_to_bag_button">Cancel</a>

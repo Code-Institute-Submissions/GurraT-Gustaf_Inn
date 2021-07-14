@@ -48,6 +48,7 @@
 1.	I can create, update, add and delete products on the the page
 2.	I can receive order information with payment and shipping details
 3.	I can see information about users
+4.  I can add and delete information about the boutique
 
 -----
 
@@ -80,17 +81,19 @@ I used [Postgres](https://www.postgresql.org/ "Postgres") for relational databas
 - Python
   - Used for setting up environment and conditions for running the application
 - JavaScript
-  -  Used for connecting activate functions within 
-  materializecss components such as dropdown-picker and date picker for calendar function 
+  -  Used for connecting activate functions such as imagehandling in forms and carousell at the homepage
 
 
 ...
 
 ### Frameworks
 
-- Django
+- Django 
   - Used as the main framework to construct this plattform
-
+- Amazon s3
+  - Used as a storage place for media files and informations sent to the platform
+- Amazon IAM
+  - Used to handling userprofile, premissions and access control for users on the trading platform
 
 
 ### Libraries
@@ -98,6 +101,12 @@ I used [Postgres](https://www.postgresql.org/ "Postgres") for relational databas
 ...
 - Gitignore
   - Used to formatting code while constructing the webpage and storing sensitive information
+- Pillow
+  - Used for image control
+-Gunicorn
+  - Used for send send informations between server and act as a Python WSGI HTTP Server
+- Boto3
+  - Used for create, configure, and manage connection between amazone webservices
 
 ### Tools
 - Git
@@ -107,29 +116,14 @@ I used [Postgres](https://www.postgresql.org/ "Postgres") for relational databas
 - Gitpod
   - An online IDE linked to the GitHub repository used for the majority of the code development.
 - [Heroku]( https://www.heroku.com/)
- - Used as a server for connecting MongoDB with Github and sourcing web pages
+ - Used as a server for connecting Django with Github and sourcing web pages
 - Font-Awesome
   - Used for icons to enhance headings and add emphasis to text.
 - Microsoft PowerPoint
   - Used for creating mock-ups for e.g., Topology in readme-file
 - Am I Responsive?
   - A tool for taking a quick snapshot of the responsive breakpoints of the website to visualise how the site will look on different device screen sizes in one place. The resulting screenshot is also used as the README.md logo image.
-- Google Inspection Tool
-  - Used for testing the design and its responsiveness
-- LightHouse
-  - Used for validating how well adjusted the design is in large devices as in small mobile devices
-- W3Cs CCS-validator
-  - Used for validating the CSS-code
-- W3C Markup-validator
-  - Used for validating the html-code
--  [codebeautify](https://codebeautify.org/)
-   - Used for formatting/beatify Html and python-code
--  [prettifycss](https://www.prettifycss.com )
-   - Used for formatting/beatify CSS-code
--  [prettifyjs]( https://www.prettifyjs.net/)
-   - Used for formatting/beatify JavaScript-code
-- JsHint.com
-    - Used for validating JavaScript code
+
 ---
 
 ## Features
@@ -139,26 +133,190 @@ I used [Postgres](https://www.postgresql.org/ "Postgres") for relational databas
 - Responsive mobile first design 
 - User friendly with balanced use of image addressing the core message with the web pages 
 - A Navbar with easy navigation that collapses on mobile displays
-- Footer with an about section, a fact section about stocks and why to register  
+- A search field for searching products and information connected to products
+- Product views with ability to selected and order products
+- Profile page with ability to see orderhistory
+- Review page with ability to add reviews connected to the platform
+- Companyinfo page where store owner can add relevant information
+- A Productmanagement page where store owner can add, update and delete products on the platform
 
 
 ### Future Features
 
-- Time was running short and still have to beatify code, add amazone aws s3, email function, plus blog function
-- More rigid testing could be at place and then beatify layout 
-- This is to see as a first print 
-
+- Restore CompanyInfo folder with  urls ![urls](static/documentation/urls_before_crash.png), template ![template](static/documentation/template_before_crash.png), views ![views](static/documentation/views_before_crash.png) and model lost during GitPod crash ![2021-07-14](static/documentation/crash.png "Messages from Gitpod")
+- Possiblity for store owner to comment reviews
+- Possibility for store owner to update company information instead of deletign the and adding new information
+- Messages for on empty pages with information to e.g. add more products in shopping bag
+- Add more intuative pictures to messages
 ---
 
+## Version Control
+
+### Version control for this repository is managed within GitHub and Gitpod using main as main branch for the project
+
+- To start with a New Repository was created in GitHub, named [Gustaf_Inn](https://github.com/GurraT/Gustaf_Inn.git)
+- Gustaf_Inn was additionally linked to Gitpod pressing the green button Gitpod in the newly created Repository
+- Gitpod was then used as an editor for creating the code in this project
+
+### Setting up Django was done in agreement with following step
+
+-	Django was intialized adding following statement in the gitpod terminal
+    - pip3 install django
+    - django-admin startproject Gustaf_Inn
+- To store sensitive information I created a gitignore-file adding following statement in teerminal
+    - touch .gitignore
+- In order to create my apps where i stored my information such url-pathway, models, views and forms I added following statement in the terminal
+    - python3 manage.py startapp "appname"
+- In order to active my apps I added url apps name to INSTALLED_APPS in settings in the folder Gustaf_Inn 
+- In addition I also added the urls to urlpatterns in the Folder Gustaf_Inn
+- For most folder app I started with creating a model
+- For most model I connected them to an admin view writing my code in each app folders admin
+- To use the information from the admin database I created a form in each app folder
+- Informations from the model and forms was than added to each folders view and link to templates within the app folders template folder
+-To activate the template I added a path in the urls.py in each folder
+
+
+### Setting up template and static folder
+- In order to built my trading platform i used a basetemplate found in the template folder called base.html, this template was used to link all metatags, base css-code, links to googlefonts, fontawesome and webservices as stripe
+- I also created a static folder were i stored my image files, my css and my documentations
+
+### Setting up a super.user and builtin authentication system 
+- In order to login in to my admin page and to set up function specific for my store owner i created a super.user adding following statement to the git pod terminal
+    - python3 manage.py create a superuser 
+- Furthermore I sat up a authentication system adding following statement to the git pod terminal
+    -pip3 install django-allauth
+-  The alluath templates were stored in the template folder
+- To active the allauth in added following statement in the settings folder in Gustaf_I
+
+
+
+-	To start with the GitHub repository was open via Gitpod editor
+-	Within gitpod an operating system was set up by first installing Flask, through printing following code within the editor “pip3 install Flask” and then” import os”
+-	After installation of flask, an app.py and env.py was created in the base directory of the repository
+-	Within the env.py file the base environment for the app was set up as follow
+_____________________________
+    import os
+    os.environ.setdefault("IP", "0.0.0.0")
+    os.environ.setdefault("PORT", "5000")
+    os.environ.setdefault("SECRET_KEY", “<password>”>
+    os.environ.setdefault("MONGO_URI", "mongodb+srv://root:<mongopassword>@cluster0.k22xz.mongodb.net/totebo?retryWrites=true&w=majority")
+    os.environ.setdefault("MONGO_DBNAME", "totebo")
+    __________________________
+
+*the SECRETE_KEY was chosen randomly and was later used to connect the repository to Heroku app, MONG_URI was selected by navigated to MongoDB Atlas Collection, pressing connect and selecting "connect your application" and copy the address within the address field and paste it to the os environment for MONGO_URI change the password and collections address. The password for the MONGO_URI address was retrieved from "Database Access" within MongoDB selecting edit.
+
+- To connect the code within the env.py file with app.py file following code was inserted to the app.py file
+_______________
+    import os
+    from flask import Flask
+
+    if os.path.exists("env.py"):
+    import env
+
+    if __name__ == "__main__":
+    app.run(os.environ.get("IP"), port=int(os.environ.get("PORT")), debug=True)
+________________________________
+
+- To avoid that sensitive information was revealed the env.py was then stored in the gitignore file
+- To be able to use python code gitignore to communicate with the MongoDB pymongo package was needed to installed, this was done writing "pip3 install flask-pymongo" in the gitpod terminal 
+- Additionally, following code was inserted to the app.py file
+_______
+    from flask_pymongo import PyMongo
+    mongo = PyMongo(app)
+___________________
+### To be able to push and connected the GitHub repository to Heroku following step was conducted
+- A requirement.txt file for running app.py was set up, writing following statement in the gitpod terminal "pip3 freeze --local > requirements.txt"
+- After setting up the requirement file a Procfile was constructing telling Heroku that app.py was used as the main file for running the website, this was done via running following command in the gitpod terminal "echo web: python app.py > Procfile"
+### To be able to connect the MongoDB Atlas to Heroku following step was conducted
+- In the Heroku under "Setting" the same information as in the env.py was set up
+_____________________________
+    os.environ.setdefault("IP", "0.0.0.0")
+    os.environ.setdefault("PORT", "5000")
+    os.environ.setdefault("SECRET_KEY", “<password>”>
+    os.environ.setdefault("MONGO_URI", "mongodb+srv://root:<mongopassword>@cluster0.k22xz.mongodb.net/totebo?retryWrites=true&w=majority")
+    os.environ.setdefault("MONGO_DBNAME", "totebo")
+    ___________________________________
+
+#### Deploying code through Heroku was conducted through by
+- First pushing code to github, writing "git add -A", "git commit -m "messages" ", "git push" in the gitpod terminal
+- To connected the Github repository to Heroku, the deploy menu of the totebo app in Heroku was selected
+- Within the deployment menu the icon "connect to GitHUb" was selected followed by selecting the repository "totebo trading" and then choosing "main branch" and select "connect", follow by deploy branch
+- To see if the deployment works the icon "view" was pressed
+
+## Testing
+
+- I conducted manual testing and used Lighthouse, google inspection tool, W3C validator(Html/CSS), JsHint (JavaScript)and PEP8 online checker(python) for automated validation see results below
+
+### Manual testing
+- [Protocol/Manual testing](static/documentation/Manualtesting.pdf "Manual Testing")
+
+*Manual test has been tried through forcing code to break as well as testing that right code works, e.g. adding condition that is not allowed in forms input and making sure that the validation notice this, further more all pages has been troughly tested by clicking on all functions and making sure the routing and commands work as they should
+
+### Automated testing of index page
+- [W3C Html validation](static/documentation/html_validation_basetemplate.png "Html Testing of index page")
+- [Result from lighthouse for large device](static/documentation/lighthouse_ld_basetemplate.png "Test index page on computer through Lighthouse")
+- [Result from lighthouse for mobile device](static/documentation/lighthouse_mob_basetemplate.png "Test index page on mobile devices through Lighthouse")
+
+### Automated testing of login page
+- [W3C Html validation](static/documentation/html_validation_login.png "Html Testing of login page")
+- [Result from lighthouse for large device](static/documentation/lighthouse_ld_login.png "Test login page on computer through Lighthouse")
+- [Result from lighthouse for mobile device](static/documentation/lighthouse_mob_login.png "Test login page on mobile devices through Lighthouse")
+
+### Automated testing of register page
+- [W3C Html validation](static/documentation/html_validation_register.png "Html Testing of register page")
+- [Result from lighthouse for large device](static/documentation/lighthouse_ld_register.png "Test register page on computer through Lighthouse")
+- [Result from lighthouse for mobile device](static/documentation/lighthouse_mob_register.png "Test register page on mobile devices through Lighthouse")
+
+### Automated testing of profile page
+- [W3C Html validation](static/documentation/html_validation_profile.png "Html Testing of profile page")
+- [Result from lighthouse for large device](static/documentation/lighthouse_ld_profile.png "Test profile page on computer through Lighthouse")
+- [Result from lighthouse for mobile device](static/documentation/lighthouse_mob_profile.png "Test profile page on mobile devices through Lighthouse")
+
+### Automated testing of message page
+- [W3C Html validation](static/documentation/html_validation_toolbox.png "Html Testing of message page")
+- [Result from lighthouse for large device](static/documentation/lighthouse_ld_message.png "Test message page on computer through Lighthouse")
+- [Result from lighthouse for mobile device](static/documentation/lighthouse_mob_message.png "Test message page on mobile devices through Lighthouse")
+
+### Automated testing of stock market page
+- [W3C Html validation](static/documentation/html_validation_stockmarket.png "Html Testing of stock market page")
+- [Result from lighthouse for large device](static/documentation/lighthouse_ld_stockmarket.png "Test stock market page on computer through Lighthouse")
+- [Result from lighthouse for mobile device](static/documentation/lighthouse_mob_stockmarket.png "Test stock market page on mobile devices through Lighthouse")
+
+### Automated testing of add_info page
+- [W3C Html validation](static/documentation/html_validation_editstock.png "Html Testing of add_info page")
+- [Result from lighthouse for large device](static/documentation/lighthouse_ld_add_info.png "Test add_info page on computer through Lighthouse")
+- [Result from lighthouse for mobile device](static/documentation/lighthouse_mob_add_info.png "Test stock market page on mobile devices through Lighthouse")
+
+### Fixed Bugs
+
+- Encounter problem with routing in def toolbox when argument name in colletion categories not found, this was fixed with help from tutors at code institutet through adding following code 
+
+___
+    if mongo.db.categories.count_documents({"name": session["user"]}, limit=1) > 0:
+            return render_template("toolbox.html", stockinfo=stockinfo, uname=uname)
+        return redirect(url_for("profile", username=session["user"]))
+  ____
+
+  - Had a backdoor open for user that was not member yet to the member section of the web page, this was fixed by adding follow condition to urls for member section 
+
+  ___
+    if "user" in session:
+
+### Know bugs
+- Contrast between mainsection background and text can be further optimized but acceptable as it is at the moment
+- Some of the image affects the prestanda and could be changed for next version
+
+
+
+!!!!!!!!!!!
 
 
 ### Acknowledgements
 
-- Large part of the code is from inspirations from lecture from code institute and pictures is extracted from pexels.com,
-next version of this document will be more specific about this part...
+- Large part of the code is from inspirations from lecture from code institute 
 
 - I am grateful for the feedback and constructive comments I got from my mentor Aaron Sinnott at Code Institute e.g., through helping me setting up a realistic schedule and give me inputs on my design and the functions within my application 
 #### I also want to thanks following people
 
 - Philip Magnusson, Carl-Johan Svenlin, Tobias Thomsson, Fredrik Thomsson for beta-testing my webpage and given me constructive feedback on the layout and function
-- The support I got through slack community from tutors and fellow students, I specially want to thank Igor, Tim, Alan and Sheryl tutor me in times of need 
+- The support I got through slack community from tutors and fellow students, I specially want to thank Igor, John, Sheryl, Tim and Johann, Jo and Alan tutor me in times of need 
