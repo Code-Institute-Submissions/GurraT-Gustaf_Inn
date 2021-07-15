@@ -251,28 +251,15 @@ _____________________________
 - I conducted manual testing and used refactor code to find error and beatify code.
 
 ### Manual testing
-- [Protocol/Manual testing](static/documentation/Manualtesting.pdf "Manual Testing")
+- [Protocol/Manual testing](static/documentation/test20210715.pdf "Manual Testing")
 
 *Manual test has been tried through forcing code to break as well as testing that right code works, e.g. adding condition that is not allowed in forms input and making sure that the validation notice this, further more all pages has been troughly tested by clicking on all functions and making sure the routing and commands work as they should
 
-### Fixed Bugs
-
-- Encounter problem with routing in def toolbox when argument name in colletion categories not found, this was fixed with help from tutors at code institutet through adding following code 
-
-___
-    if mongo.db.categories.count_documents({"name": session["user"]}, limit=1) > 0:
-            return render_template("toolbox.html", stockinfo=stockinfo, uname=uname)
-        return redirect(url_for("profile", username=session["user"]))
-  ____
-
-  - Had a backdoor open for user that was not member yet to the member section of the web page, this was fixed by adding follow condition to urls for member section 
-
-  ___
-    if "user" in session:
 
 ### Know bugs
 - Companyinfo app malfunctioning after git breakdown
 - Code not beatified to full extens because of shortage of time
+- some pictures strechted, button malplaced, and template not responsive
 
 
 ### Acknowledgements
