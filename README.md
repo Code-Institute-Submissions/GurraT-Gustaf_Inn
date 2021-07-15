@@ -2,8 +2,7 @@
 
 ![Mock-up](static/documentation/mockup.png "Mock-up Wizard Inn")
 
-#### The aim of this website is to offer trading-platform were users can search, select and buy items with extraordinary properties such as magic amulettes. Users will be able to search for specific items, select items of interest, add them to a shopping bag and buy items of interest. Bought items will be confirmed by email and sent to prefered delivery adress. Furthermore user will be able to set up their own profile space were they can for instance get shopping histories. The code for this project is found [here](https://dashboard.heroku.com/apps/gustaf-inn "Link to Wizard Inn deployed homepage")
-
+#### The aim of this website is to offer trading-platform where users can search, select and buy items with extraordinary properties such as magic amulettes. Users will be able to search for specific items, select items of interest, add them to a shopping bag and buy items of interest. Bought items will be confirmed by email and sent to prefered delivery adress. Furthermore, user will be able to set up their own profile space where they can get shopping histories. The code for this project is found [here](https://dashboard.heroku.com/apps/gustaf-inn "Link to Wizard Inn deployed homepage")
 
 ------
 -----
@@ -12,19 +11,18 @@
 
 ### Project Goal
 
-#### The goal of this project is to build an interactive and responsive trading platform allowing users to search, select, add and buy items. Additionally, users will be able to set up their own profile page where they can find for example earlier shopping histories.
+#### The goal of this project is to build an interactive and responsive trading platform allowing users to search, select, add and buy items. Additionally, users will be able to set up their own profile page where they can find earlier shopping histories.
 
 #### The features on the website will:
 - Give users the possibility to search, select and buy items
 - Give superusers such as store owner a chance to create, update, delete and edit product information
 - Give users an opportunity to create their own profile page and see earlier shopping history
 
-
 #### I will achieve this by:
-- By allowing user to search, select and buy items and add their delivery information on a shipping form
+- By allowing user to search, select and buy items and add their delivery information on to a shipping form
 - By allowing user to edit their shopping bag
 - By allowing registered user to see their shopping history
-- By allowing users to get an confirmation email when they order an item
+- By allowing users to get a confirmation email when they order an item
 - By allowing superuser such as storeowner to add, delete, edit and update information such as product details and user profiles
 
 ## User Goal
@@ -34,22 +32,23 @@
 
 ### User Stories
 
-#### As a person interested in mystic items, I want to have a website where 
+#### As a person interested in mystic items, I want to have a website were 
 
-1.	I can find, select and buy items such as amulettes and cristals (see our stock pages [here]( https://totebo.herokuapp.com/get_stockinfo  "Example from stocks page"))
-2.	I search for items connected to my interest (see our stock pages [here]( http://totebo.herokuapp.com/profile/user  "Example from profile page"))
-3.	I order and buy and see prices for items of my interest (see our stock pages [here]( http://totebo.herokuapp.com/toolbox "Example from profile page"))
-4. I can get an orderinformation sent by email when buying an item
-5. I can pay and make sure to get my items delivered when making an order
-6. I can see how much i spent on my items of interest
-7. I can see earlier shopping history
+1.  I can find, select and buy items such as amulettes and cristals (see our product page [here](https://gustaf-inn.herokuapp.com/products/  "Example from product page"))
+2.  I search for items connected to my interest (see searchfield on all pages [here](https://gustaf-inn.herokuapp.com/products/  "Example from product page"))
+3.  I order and buy and see prices for items of my interest (see product details and add buttom [here](https://gustaf-inn.herokuapp.com/products/3/ "Example from product page page"))
+4. I can get an orderinformation sent by email when buying an item (see order form [here](https://gustaf-inn.herokuapp.com/checkout/  "Example from checkout page"))
+5. I can pay and make sure to get my items delivered when making an order (see order form [here](https://gustaf-inn.herokuapp.com/checkout/  "Example from checkout page"))
+6. I can see how much I spent on my items of interest (see shopping bag icon plus summary of order history [here](https://gustaf-inn.herokuapp.com/profile/  "Example from profile page"))
+7. I can see earlier shopping history (see summary of order history [here](https://gustaf-inn.herokuapp.com/profile/  "Example from profile page")) 
+8. I can add reviews (see add button [here](https://gustaf-inn.herokuapp.com/products/add/  "Example from review page"))
 
 #### As store owner or superuser I want to have a website where....
-1.	I can create, update, add and delete products on the the page
-2.	I can receive order information with payment and shipping details
-3.	I can see information about users
-4.  I can add and delete information about the boutique
-
+1.  I can create, update, add and delete products on the the page (see product add form  [here](https://gustaf-inn.herokuapp.com/products/add/  "Example from product page"))
+2.  I can receive order information with payment and shipping details (done through stripe and email)
+3.  I can see information about users (done through stripe and amozone webservices)
+4.  I can add and delete company information (still have to be solved, failed after git crash)
+5.  I can delete reviews (see delete button [here](https://gustaf-inn.herokuapp.com/products/add/  "Example from review page"))
 -----
 
 ### Design Choices
@@ -68,7 +67,7 @@ I focused mainly on black, white, gray colortheme to create a clear, simple and 
 [Wireframe](static/documentation/ShopInn.pdf "Wireframe Wizard Inn")
 
 #### Databases
-I used [Postgres](https://www.postgresql.org/ "Postgres") for relational databasehandling
+I used mysql during production mode and [Postgres](https://www.postgresql.org/ "Postgres") for relational databasehandling deployed product
 
 ## Technologies Used
 
@@ -83,20 +82,18 @@ I used [Postgres](https://www.postgresql.org/ "Postgres") for relational databas
 - JavaScript
   -  Used for connecting activate functions such as imagehandling in forms and carousell at the homepage
 
-
 ...
 
 ### Frameworks
 
 - Django 
-  - Used as the main framework to construct this plattform
+  - Used as the main framework to construct this platform
 - Amazon s3
   - Used as a storage place for media files and informations sent to the platform
 - Amazon IAM
   - Used to handling userprofile, premissions and access control for users on the trading platform
 - Stripe 
   - Used for a managing payment details
-
 
 ### Libraries
 
@@ -105,8 +102,8 @@ I used [Postgres](https://www.postgresql.org/ "Postgres") for relational databas
   - Used to formatting code while constructing the webpage and storing sensitive information
 - Pillow
   - Used for image control
--Gunicorn
-  - Used for send send informations between server and act as a Python WSGI HTTP Server
+- Gunicorn
+  - Used for sending informations between server and act as a Python WSGI HTTP Server
 - Boto3
   - Used for create, configure, and manage connection between amazone webservices
 - django-countries
@@ -120,7 +117,7 @@ I used [Postgres](https://www.postgresql.org/ "Postgres") for relational databas
 - Gitpod
   - An online IDE linked to the GitHub repository used for the majority of the code development.
 - [Heroku]( https://www.heroku.com/)
- - Used as a server for connecting Django with Github and sourcing web pages
+  - Used as a server for connecting Django with Github and sourcing web pages
 - Font-Awesome
   - Used for icons to enhance headings and add emphasis to text.
 - Microsoft PowerPoint
@@ -139,19 +136,19 @@ I used [Postgres](https://www.postgresql.org/ "Postgres") for relational databas
 - A Navbar with easy navigation that collapses on mobile displays
 - A search field for searching products and information connected to products
 - Product views with ability to selected and order products
-- Profile page with ability to see orderhistory
+- Profile page with ability to see order history
 - Review page with ability to add reviews connected to the platform
 - Companyinfo page where store owner can add relevant information
 - A Productmanagement page where store owner can add, update and delete products on the platform
 
-
 ### Future Features
 
-- Restore CompanyInfo folder with  urls ![urls](static/documentation/urls_before_crash.png), template ![template](static/documentation/template_before_crash.png), views ![views](static/documentation/views_before_crash.png) and model lost during GitPod crash ![2021-07-14](static/documentation/crash.png "Messages from Gitpod")
-- Possiblity for store owner to comment reviews
-- Possibility for store owner to update company information instead of deletign the and adding new information
-- Messages for on empty pages with information to e.g. add more products in shopping bag
-- Add more intuative pictures to messages
+- Restore Company Info folder with urls ![urls](static/documentation/urls_before_crash.png), template ![template](static/documentation/template_before_crash.png), views ![views](static/documentation/views_before_crash.png) and model lost during GitPod crash ![2021-07-14](static/documentation/crash.png "Messages from Gitpod")
+- Possibility for store owner to comment reviews
+- Possibility for store owner to update company information instead of deleting and be forced to add new information
+- Set up Messages on empty pages with information to e.g., add more products in shopping bag
+- Add more intuitive pictures to messages
+- Update some aspects of the layout
 ---
 
 ## Version Control
@@ -164,32 +161,31 @@ I used [Postgres](https://www.postgresql.org/ "Postgres") for relational databas
 
 ### Setting up Django was done in agreement with following step
 
--	Django was intialized adding following statement in the gitpod terminal
+- Django was intialized adding following statement in the gitpod terminal
     - pip3 install django
     - django-admin startproject Gustaf_Inn
-- To store sensitive information I created a gitignore-file adding following statement in terminal
+- To store sensitive information, I created a gitignore-file adding following statement in terminal
     - touch .gitignore
 - In order to create my apps where i stored my information such url-pathway, models, views and forms I added following statement in the terminal
     - python3 manage.py startapp "appname"
 - In order to active my apps I added url apps name to INSTALLED_APPS in settings in the folder Gustaf_Inn 
-- In addition I also added the urls to urlpatterns in the Folder Gustaf_Inn
+- In addition, I also added the urls to urlpatterns in the Folder Gustaf_Inn
 - For most folder app I started with creating a model
 - For most model I connected them to an admin view writing my code in each app folders admin
 - To use the information from the admin database I created a form in each app folder
 - Informations from the model and forms was than added to each folders view and linked to templates within the app folders template folder
-- To activate the template I added a path in the urls.py in each folder
-
+- To activate the templates, I added a path in the urls.py in each folder
 
 ### Setting up template and static folder
 - In order to built my trading platform i used a basetemplate stored in the template folder called base.html, this template was used to link all metatags, base css-code, links to googlefonts, fontawesome and webservices as stripe
 - I also created a static folder were i stored my image files, my css and my documentations
 
-### Setting up a super.user and builtin authentication system 
+### Setting up a super.user and built-in authentication system 
 - In order to login in to my admin page and to set up function specific for my store owner i created a super.user adding following statement to the git pod terminal
     
     - python3 manage.py create a superuser 
 
-- Furthermore I sat up an authentication system adding following statement to the git pod terminal
+- Furthermore, I sat up an authentication system adding following statement to the git pod terminal
     - pip3 install django-allauth
 
 -  The alluath templates were stored in the template folder
@@ -221,11 +217,13 @@ LOGIN_REDIRECT_URL ='/'
   - pip3 install dj_database
   - pip3 install psycopg2-binary
 
+- The postgres data than added to Heroku by navigating to resources and find the add-ons followed by setting up the credential
+
 ### Setting up AWS s3, IAM
   - Storage space and payment system at amazone was set up in accordance with instruction on amazone homepage, followed by setting up key to amazone service in the git pod settings followed by command stated below in the git terminal
     - pip3 install boto3
     - pip3 install django-storages
-- Additionally following information where added to the settings in the Gustaf_inn folder
+- Additionally, following information were added to the settings in the Gustaf_inn folder
     -  AWS_STORAGE_BUCKET_NAME = 'Wizard_Inn'
     - AWS_S3_REGION_NAME = 'sts.eu-north-1'
     - AWS_ACCESS_KEY_ID = os.environ.get- ('AWS_ACCESS_KEY')
@@ -236,7 +234,7 @@ LOGIN_REDIRECT_URL ='/'
 - A requirement.txt file for running app.py was set up, writing following statement in the gitpod terminal "pip3 freeze -- > requirements.txt"
 - After setting up the requirement file a Procfile was constructing telling Heroku that app.py was used as the main file for running the website, this was done via running following command in the gitpod terminal "echo web: python app.py > Procfile"
 ### To be able to connect Django to Heroku following step was conducted
-- In the Heroku under "Setting" the same information as stated in git pod varibles (keys for stripe, amazone, ) was set up
+- In the Heroku under "Setting" the same information as stated in git pod varabiles (keys for stripe, amazone, heroku, git) was set up
 _____________________________
 
 #### Deploying code through Heroku was conducted through by
@@ -253,18 +251,23 @@ _____________________________
 ### Manual testing
 - [Protocol/Manual testing](static/documentation/test20210715.pdf "Manual Testing")
 
-*Manual test has been tried through forcing code to break as well as testing that right code works, e.g. adding condition that is not allowed in forms input and making sure that the validation notice this, further more all pages has been troughly tested by clicking on all functions and making sure the routing and commands work as they should
-
+*Manual test has been tried through forcing code to break as well as testing that right code works, e.g., adding condition that is not allowed in forms input and making sure that the validation notice this, further more all pages has been troughly tested by clicking on all functions and making sure the routing and commands work as they should
 
 ### Know bugs
-- Companyinfo app malfunctioning after git breakdown
-- Code not beatified to full extens because of shortage of time
+- Company info app malfunctioning after git breakdown
+- Code not beatified into detail because of shortage of time
 - some pictures strechted, button malplaced, and template not responsive
 
+### Fixed Bugs
+
+- Intent errors in code, fixed
+- Toast messages malfunctioning due to hidden in for loop, fixed
+- template behave oddly when pushing to heroku, updated bootstrap link, fixed
+- migration to postgres not fully working, fixed
 
 ### Acknowledgements
 
-### Mediafiles
+### Media files
 - For my pages I collected the images from licenced or free to use sources, such as [Pexel.com](https://www.pexels.com/), [klipartz](https://www.klipartz.com),[freepik](www.freepik.com), [bing](bing.com) and [serpentsoundstudios](www.serpentsoundstudios.com)
 
 - Large part of the code is from inspirations from lecture from code institute 
